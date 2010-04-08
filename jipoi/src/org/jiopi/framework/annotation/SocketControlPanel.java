@@ -20,6 +20,8 @@ public @interface SocketControlPanel {
 	String version() default  "";
 	
 
-	String ControlPanel();
+	String controlpanel();
+	
+	String configuration() default "";
 	
 }

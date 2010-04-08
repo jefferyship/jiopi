@@ -7,5 +7,7 @@ public @interface SocketModule {
 	String module() default "";
 	
 	String version() default  "";
+	
+	String configuration() default "";
 
 }
