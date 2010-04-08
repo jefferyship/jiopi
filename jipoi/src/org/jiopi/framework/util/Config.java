@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import org.jiopi.framework.version.JIOPI;
+
+@JIOPI
 public class Config {
 	
 	public static final String CONFIG_FILE = "jiopi.properties";
@@ -22,11 +25,10 @@ public class Config {
 				throw new RuntimeException( "cannot find configuration file: " + CONFIG_FILE
 					+ " in class path.");
 			}
-//			System.out.println( pro );
 		} catch (IOException e) {
 			throw new RuntimeException( e );
 		} finally {
-			close( in );		// fixed bug.
+			close( in );
 		}
 	}
 	

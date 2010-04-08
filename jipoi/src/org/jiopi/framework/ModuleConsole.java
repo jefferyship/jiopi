@@ -1,5 +1,8 @@
 package org.jiopi.framework;
 
+import org.jiopi.framework.version.JIOPI;
+
+@JIOPI
 public interface ModuleConsole {
 	
 	public Object dynamicOperate(String registerName,Object... args);

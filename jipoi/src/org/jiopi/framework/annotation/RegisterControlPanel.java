@@ -5,9 +5,12 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+import org.jiopi.framework.version.JIOPI;
+
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE,ElementType.METHOD,ElementType.FIELD})
+@JIOPI
 public @interface RegisterControlPanel {
 	String value() default "";
 }

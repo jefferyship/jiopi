@@ -1,5 +1,8 @@
 package org.jiopi.framework.exception;
 
+import org.jiopi.framework.version.JIOPI;
+
+@JIOPI
 public class CentralConsoleNotInitializedException extends RuntimeException {
 
 	private static final long serialVersionUID = -6451167549807342228L;

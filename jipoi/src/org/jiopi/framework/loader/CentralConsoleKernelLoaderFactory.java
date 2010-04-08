@@ -3,7 +3,9 @@ package org.jiopi.framework.loader;
 import org.jiopi.framework.core.CentralConsoleKernel;
 import org.jiopi.framework.exception.CentralConsoleInitializeException;
 import org.jiopi.framework.util.Config;
+import org.jiopi.framework.version.JIOPI;
 
+@JIOPI
 public class CentralConsoleKernelLoaderFactory {
 	
 	private static final String LOADER_CLASS = "jiopi.kernel.loader.class";

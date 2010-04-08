@@ -1,7 +1,9 @@
 package org.jiopi.framework.core;
 
 import org.jiopi.framework.ModuleConsole;
+import org.jiopi.framework.version.JIOPI;
 
+@JIOPI
 public interface CentralConsoleKernel {
 	
 	public ModuleConsole accessModuleConsole(String moduleName,String compatibleVersion);
