@@ -5,6 +5,8 @@ public enum InstanceType {
 	
 	PROTOTYPE,
 	
-	SINGLETON
+	SINGLETON,
+	
+	CONFIGURATION_SINGLETON
 	
 }
