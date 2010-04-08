@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module name="modulename" version="1.0.0.1" xmlns="http://www.jiopi.org/2010/JIOPISchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.jiopi.org/2010/JIOPISchema xsd/jiopi-config-module.xsd ">
+  <hotswap>
+    <class reset-method="reset">org.example.module.hotswap.**</class>
+  </hotswap>
+  <controlpanel class="org.example.module.ModuleA" hotswap="true" register-controlpanel="true" reset-method="reset">
+    <instantiation>
+      <instancetype>SINGLETON</instancetype>
+      <factory-method>factorymethod</factory-method>
+    </instantiation>
+    <socket-module id="" module="" version="" configuration="">socketmodule</socket-module>
+    <socket-controlpanel controlpanel="" id="" module="" version="" configuration="">socketcontrolpanel</socket-controlpanel>
+  </controlpanel>
+  
+  <controlpanel class="org.example.module.ModuleB" hotswap="true" register-controlpanel="true" reset-method="reset">
+    <instantiation>
+      <instancetype>SINGLETON</instancetype>
+      <factory-method>factorymethod</factory-method>
+    </instantiation>
+    <socket-module id="" module="" version="">socketmodule</socket-module>
+    <socket-controlpanel controlpanel="" id="" module="" version="">socketcontrolpanel</socket-controlpanel>
+  </controlpanel>
+</module>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.jiopi.org/2010/JIOPISchema" xmlns:jiopi="http://www.jiopi.org/2010/JIOPISchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.jiopi.org/2010/JIOPISchema">  
+	<xs:complexType name="releaseType">
+		<xs:sequence>
+			<xs:element name="resource" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:anyURI">
+						    <xs:attribute name="update-time" type="xs:dateTime" use="optional"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="version" type="versionType" use="required" />
+		<xs:attribute name="base-url" type="folderpathType" use="optional" />
+		<xs:attribute name="reference" type="xmlfileType" use="optional" />
+	</xs:complexType>
+    
+    <xs:simpleType name='xmlfileType'>
+        <xs:restriction base='xs:string'>
+            <xs:pattern value='(.)+\.xml'/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name='folderpathType'>
+        <xs:restriction base='xs:string'>
+            <xs:pattern value='(.)*/'/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name='modulenameType'>
+        <xs:restriction base='xs:string'>
+            <xs:pattern value='[a-zA-Z0-9\._\-]+'/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name='versionType'>
+        <xs:restriction base='xs:string'>
+            <xs:pattern value='\d\.\d\.\d\.\d'/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

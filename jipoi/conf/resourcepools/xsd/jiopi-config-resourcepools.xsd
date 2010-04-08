@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.jiopi.org/2010/JIOPISchema" xmlns:jiopi="http://www.jiopi.org/2010/JIOPISchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.jiopi.org/2010/JIOPISchema">
+    <xs:include schemaLocation="jiopi-config-common-type.xsd" />
+	<xs:element name="resourcepools">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="modules" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:attribute name="url-format" type="xmlfileType" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="commonlib" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="resource" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:anyURI">
+											<xs:attribute name="update-time" type="xs:dateTime" use="optional" />
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="group" type="modulenameType" use="required" />
+						<xs:attribute name="base-url" type="folderpathType" use="optional" />
+					</xs:complexType>
+					<xs:unique name="jarUnique">
+					    <xs:selector xpath="jiopi:resource"/>
+					    <xs:field xpath="." />
+					</xs:unique>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="groupUnique">
+		 <xs:selector xpath="jiopi:commonlib"/>
+		 <xs:field xpath="@group" />
+		</xs:unique>
+	</xs:element>
+</xs:schema>

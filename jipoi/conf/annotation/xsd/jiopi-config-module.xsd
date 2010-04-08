@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.jiopi.org/2010/JIOPISchema" xmlns:jiopi="http://www.jiopi.org/2010/JIOPISchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.jiopi.org/2010/JIOPISchema">
+    <xs:element name="module">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="hotswap" minOccurs="0" maxOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="class" minOccurs="1" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="reset-method" type="xs:string" use="optional"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                    <xs:unique name="classUnique">
+                        <xs:selector xpath="jiopi:class"/>
+                        <xs:field xpath="."/>
+                    </xs:unique>
+                </xs:element>
+                <xs:element name="controlpanel" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="instantiation" minOccurs="0" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="instancetype">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="SINGLETON"/>
+                                                    <xs:enumeration value="PROTOTYPE"/>
+                                                    <xs:enumeration value="CONFIGURATION_SINGLETON"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="factory-method" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            
+                            <xs:element name="socket-module" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="id" type="xs:string" use="optional"/>
+                                            <xs:attribute name="module" type="xs:string" use="optional"/>
+                                            <xs:attribute name="version" type="xs:string" use="optional"/>
+                                            <xs:attribute name="configuration" type="xs:string" use="optional"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                            
+                            <xs:element name="socket-controlpanel" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="id" type="xs:string" use="optional"/>
+                                            <xs:attribute name="module" type="xs:string" use="optional"/>
+                                            <xs:attribute name="version" type="xs:string" use="optional"/>
+                                            <xs:attribute name="controlpanel" type="xs:string" use="required"/>
+                                            <xs:attribute name="configuration" type="xs:string" use="optional"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="class" type="xs:string" use="required"/>
+                        <xs:attribute name="register-controlpanel" use="optional">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="true"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="hotswap" use="optional">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="true"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="reset-method" type="xs:string" use="optional"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="name" type="modulenameType" use="optional"/>
+            <xs:attribute name="version" type="versionType" use="optional"/>
+        </xs:complexType>
+        <xs:unique name="controlpanelUnique">
+            <xs:selector xpath="jiopi:controlpanel"/>
+            <xs:field xpath="@class"/>
+        </xs:unique>
+    </xs:element>
+    
+    <xs:simpleType name='modulenameType'>
+        <xs:restriction base='xs:string'>
+            <xs:pattern value='[a-zA-Z0-9\._\-]+'/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name='versionType'>
+        <xs:restriction base='xs:string'>
+            <xs:pattern value='\d\.\d\.\d\.\d'/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

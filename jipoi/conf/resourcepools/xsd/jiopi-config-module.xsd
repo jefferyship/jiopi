@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.jiopi.org/2010/JIOPISchema" xmlns:jiopi="http://www.jiopi.org/2010/JIOPISchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.jiopi.org/2010/JIOPISchema">
+	<xs:include schemaLocation="jiopi-config-common-type.xsd" />
+	<xs:element name="module" type="moduleType">
+		<xs:unique name="versionUnique">
+			<xs:selector xpath="jiopi:release" />
+			<xs:field xpath="@version" />
+		</xs:unique>
+	</xs:element>
+
+	<xs:complexType name="moduleType">
+		<xs:sequence>
+			<xs:element name="release" type="releaseType" minOccurs="0" maxOccurs="unbounded">
+				<xs:unique name="jarUnique">
+					<xs:selector xpath="jiopi:resource" />
+					<xs:field xpath="." />
+				</xs:unique>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="name" type="modulenameType" use="required" />
+		<xs:attribute name="base-url" type="folderpathType" use="optional" />
+		<xs:attribute name="reference" type="xmlfileType" use="optional" />
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resourcepools xmlns="http://www.jiopi.org/2010/JIOPISchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.jiopi.org/2010/JIOPISchema xsd/jiopi-config-resourcepools.xsd ">
+  <modules url-format="http://www.example.org/libroot/jiopi-config-module-${module}.xml"/>
+  <commonlib group="main" base-url="http://www.example.org/commonlib/">
+      <resource update-time="2010-03-30T10:00:00">/example.org.commonlib-commons-codec-1.3.jar</resource>
+      <resource>file:///usr/local/lib/commonlib/*.jar</resource>
+      <resource>file:///usr/local/libs/*/*.jar</resource>
+      <resource>file:///usr/local/libs/a*/*.jar</resource>
+  </commonlib>
+  <commonlib group="main2" base-url="http://www.example.org/commonlib/">
+      <resource update-time="2010-03-30T10:00:00">/example.org.commonlib-commons-codec-1.3.jar</resource>
+      <resource>file:///usr/local/lib/commonlib/*.jar</resource>
+      <resource>file:///usr/local/libs/*/*.jar</resource>
+  </commonlib>
+</resourcepools>
