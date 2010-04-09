@@ -17,8 +17,7 @@ public class Config {
 	static {
 		InputStream in = null;
 		try {
-			in = Thread.currentThread().getContextClassLoader()
-				.getResourceAsStream( CONFIG_FILE );
+			in = Config.class.getClassLoader().getResourceAsStream( CONFIG_FILE );
 			if( in!=null ) {
 				pro.load( in );
 			} else {
