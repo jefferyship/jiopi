@@ -5,7 +5,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import org.jiopi.framework.version.JIOPI;
+import org.jiopi.framework.core.version.JIOPI;
 
 
 @Retention(RetentionPolicy.RUNTIME)

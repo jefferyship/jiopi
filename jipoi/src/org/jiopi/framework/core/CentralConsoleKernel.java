@@ -1,7 +1,7 @@
 package org.jiopi.framework.core;
 
 import org.jiopi.framework.ModuleConsole;
-import org.jiopi.framework.version.JIOPI;
+import org.jiopi.framework.core.version.JIOPI;
 
 @JIOPI
 public interface CentralConsoleKernel {

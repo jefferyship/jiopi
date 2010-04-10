@@ -1,4 +1,4 @@
-package org.jiopi.framework.version;
+package org.jiopi.framework.core.version;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

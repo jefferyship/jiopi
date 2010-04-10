@@ -1,9 +1,9 @@
 package org.jiopi.framework;
 
 import org.jiopi.framework.core.CentralConsoleKernel;
+import org.jiopi.framework.core.loader.CentralConsoleKernelLoaderFactory;
+import org.jiopi.framework.core.version.JIOPI;
 import org.jiopi.framework.exception.CentralConsoleNotInitializedException;
-import org.jiopi.framework.loader.CentralConsoleKernelLoaderFactory;
-import org.jiopi.framework.version.JIOPI;
 
 @JIOPI
 public class CentralConsole{

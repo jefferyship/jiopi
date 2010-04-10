@@ -1,27 +1,27 @@
-package org.jiopi.framework.util;
+package org.jiopi.framework.core;
 
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import org.jiopi.framework.version.JIOPI;
+import org.jiopi.framework.core.version.JIOPI;
 
 @JIOPI
 public class Config {
 	
-	public static final String CONFIG_FILE = "jiopi.properties";
+	
 	
 	private static Properties pro = new Properties();
 	
 	static {
 		InputStream in = null;
 		try {
-			in = Config.class.getClassLoader().getResourceAsStream( CONFIG_FILE );
+			in = Config.class.getClassLoader().getResourceAsStream( JiopiConfigConstants.CONFIG_FILE );
 			if( in!=null ) {
 				pro.load( in );
 			} else {
-				throw new RuntimeException( "cannot find configuration file: " + CONFIG_FILE
+				throw new RuntimeException( "cannot find configuration file: " + JiopiConfigConstants.CONFIG_FILE
 					+ " in class path.");
 			}
 		} catch (IOException e) {
