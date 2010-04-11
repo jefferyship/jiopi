@@ -27,6 +27,7 @@ public class JiopiConfigConstants {
 	
 	public static final String CONFIG_FILE = "jiopi.properties";
 	
+	public static final String KERNEL_INITIALIZER_CLASS = "jiopi.kernel.initializer.class";
 	public static final String KERNEL_LOADER_CLASS = "jiopi.kernel.loader.class";
 	
 	public static final String HOTSWAP = "jiopi.hotswap";
