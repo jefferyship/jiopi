@@ -27,7 +27,14 @@ import java.lang.annotation.Target;
 
 import org.jiopi.framework.core.version.JIOPI;
 
-
+/**
+ * 
+ * 模块插入接口槽，用于描述一个 允许其他模块 接入 当前模块 的 连接方法,
+ * 从而可以直接连接两个对象
+ * 
+ * @since 2010.3.5
+ *
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE,ElementType.METHOD})
 @JIOPI

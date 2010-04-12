@@ -22,6 +22,11 @@ package org.jiopi.framework.exception;
 
 import org.jiopi.framework.core.version.JIOPI;
 
+/**
+ * 
+ * @since 2010.2.20
+ *
+ */
 @JIOPI
 public class CentralConsoleNotInitializedException extends RuntimeException {
 

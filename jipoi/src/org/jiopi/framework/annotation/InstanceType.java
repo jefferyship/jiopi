@@ -22,6 +22,13 @@ package org.jiopi.framework.annotation;
 
 import org.jiopi.framework.core.version.JIOPI;
 
+/**
+ * 
+ * 描绘可用的 自动化实例对象时 的实例类型
+ * 
+ * @since 2010.2.20
+ *
+ */
 @JIOPI
 public enum InstanceType {
 	

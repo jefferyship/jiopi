@@ -27,6 +27,13 @@ import java.util.Properties;
 
 import org.jiopi.framework.core.version.JIOPI;
 
+/**
+ * 
+ * 读取jiopi配置文件
+ * 
+ * @since 2010.2.21
+ *
+ */
 @JIOPI
 public class Config {
 	

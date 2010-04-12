@@ -27,7 +27,13 @@ import java.lang.annotation.Target;
 
 import org.jiopi.framework.core.version.JIOPI;
 
-
+/**
+ * 
+ * 将 接口/类/方法/成员变量 注册到 控制面板
+ * 
+ * @since 2010.3.5
+ *
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE,ElementType.METHOD,ElementType.FIELD})
 @JIOPI

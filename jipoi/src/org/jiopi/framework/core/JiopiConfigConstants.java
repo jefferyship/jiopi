@@ -22,6 +22,13 @@ package org.jiopi.framework.core;
 
 import org.jiopi.framework.core.version.JIOPI;
 
+/**
+ * 
+ * JIOPI 配置文件常量
+ * 
+ * @since 2010.4.10
+ *
+ */
 @JIOPI
 public class JiopiConfigConstants {
 	

@@ -25,6 +25,14 @@ import org.jiopi.framework.core.loader.CentralConsoleKernelLoaderFactory;
 import org.jiopi.framework.core.version.JIOPI;
 import org.jiopi.framework.exception.CentralConsoleNotInitializedException;
 
+/**
+ * 
+ * JIOPi系统的总控操作台
+ * 
+ * 
+ * @since 2010.2.20
+ *
+ */
 @JIOPI
 public class CentralConsole{
 	

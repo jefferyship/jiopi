@@ -22,6 +22,13 @@ package org.jiopi.framework.annotation;
 
 import org.jiopi.framework.core.version.JIOPI;
 
+/**
+ * 
+ * 一个模块对其他模块的依赖注入
+ * 
+ * @since 2010.2.20
+ *
+ */
 @JIOPI
 public @interface SocketModule {
 	

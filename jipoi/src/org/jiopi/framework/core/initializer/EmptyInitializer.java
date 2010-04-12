@@ -20,6 +20,16 @@
  */
 package org.jiopi.framework.core.initializer;
 
+import org.jiopi.framework.core.version.JIOPI;
+
+/**
+ * 
+ * 空前置初始化接口
+ * 
+ * @since 2010.4.11
+ *
+ */
+@JIOPI
 public class EmptyInitializer implements Initializer {
 
 	@Override

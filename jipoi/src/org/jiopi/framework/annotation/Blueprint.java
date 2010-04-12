@@ -27,7 +27,14 @@ import java.lang.annotation.Target;
 
 import org.jiopi.framework.core.version.JIOPI;
 
-
+/**
+ * 蓝图注释
+ * 
+ * 用于标明一个接口类所属的 蓝图 名称 和 版本
+ * 
+ * @since 2010.2.20
+ *
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @JIOPI

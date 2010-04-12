@@ -26,6 +26,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import org.jiopi.framework.annotation.Blueprint;
 
+/**
+ * 
+ * JIOPI 版本定义
+ * 
+ * @since 2010.4.8
+ *
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Blueprint(name="jiopi", version="0.3", versionInterface=JIOPI.class)

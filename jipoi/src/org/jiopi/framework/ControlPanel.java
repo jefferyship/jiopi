@@ -22,6 +22,13 @@ package org.jiopi.framework;
 
 import org.jiopi.framework.core.version.JIOPI;
 
+/**
+ * 
+ * 组件控制面板
+ * 
+ * @since 2010.2.20
+ *
+ */
 @JIOPI
 public interface ControlPanel {
 	

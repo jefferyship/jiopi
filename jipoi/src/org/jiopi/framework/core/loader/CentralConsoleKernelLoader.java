@@ -23,6 +23,13 @@ package org.jiopi.framework.core.loader;
 import org.jiopi.framework.core.CentralConsoleKernel;
 import org.jiopi.framework.core.version.JIOPI;
 
+/**
+ * 
+ * 中央控制台核心程序装载接口
+ * 
+ * @since 2010.2.21
+ *
+ */
 @JIOPI
 public interface CentralConsoleKernelLoader {
 	

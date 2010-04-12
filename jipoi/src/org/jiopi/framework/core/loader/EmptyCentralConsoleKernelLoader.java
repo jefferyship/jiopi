@@ -24,6 +24,13 @@ import org.jiopi.framework.ModuleConsole;
 import org.jiopi.framework.core.CentralConsoleKernel;
 import org.jiopi.framework.core.version.JIOPI;
 
+/**
+ * 
+ * 空白中央控制台核心对象
+ * 
+ * @since 2010.2.21
+ *
+ */
 @JIOPI
 public class EmptyCentralConsoleKernelLoader implements
 		CentralConsoleKernelLoader {

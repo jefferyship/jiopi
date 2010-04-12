@@ -29,6 +29,8 @@ import org.jiopi.framework.core.version.JIOPI;
  * 框架初始化函数
  * 
  * 本函数应当在整个框架未被调用之前调用,以便系统进行更高级别的初始化操作
+ * 
+ * @since 2010.4.11
  *
  */
 @JIOPI

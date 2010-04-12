@@ -27,7 +27,13 @@ import java.lang.annotation.Target;
 
 import org.jiopi.framework.core.version.JIOPI;
 
-
+/**
+ * 
+ * 定义自动转载时类的实例化方式 是 单例模式 还是原形模式
+ * 
+ * @since 2010.2.20
+ *
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @JIOPI

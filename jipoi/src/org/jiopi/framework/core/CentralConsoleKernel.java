@@ -23,6 +23,13 @@ package org.jiopi.framework.core;
 import org.jiopi.framework.ModuleConsole;
 import org.jiopi.framework.core.version.JIOPI;
 
+/**
+ * 
+ * 中央控制台的核心访问接口
+ * 
+ * @since 2010.2.20
+ *
+ */
 @JIOPI
 public interface CentralConsoleKernel {
 	

@@ -27,6 +27,12 @@ import java.lang.annotation.Target;
 
 import org.jiopi.framework.core.version.JIOPI;
 
+/**
+ * 指定类支持Hotswap
+ * 
+ * @since 2010.3.31
+ *
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE})
 @JIOPI

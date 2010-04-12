@@ -26,6 +26,13 @@ import org.jiopi.framework.core.JiopiConfigConstants;
 import org.jiopi.framework.core.version.JIOPI;
 import org.jiopi.framework.exception.CentralConsoleInitializeException;
 
+/**
+ * 
+ * 核心程序装载工厂
+ * 
+ * @since 2010.2.21
+ *
+ */
 @JIOPI
 public class CentralConsoleKernelLoaderFactory {
 	
