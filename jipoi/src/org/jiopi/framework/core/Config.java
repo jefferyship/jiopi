@@ -67,6 +67,10 @@ public class Config {
 		}
 	}
 	
+	public static Properties getJiopiProperties(){
+		return pro;
+	}
+	
 	public static String getConfig( String key ) {
 		return pro.getProperty( key );
 	}
