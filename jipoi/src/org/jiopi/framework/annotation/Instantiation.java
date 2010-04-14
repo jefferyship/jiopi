@@ -31,6 +31,8 @@ import org.jiopi.framework.core.version.JIOPI;
  * 
  * 定义自动转载时类的实例化方式 是 单例模式 还是原形模式
  * 
+ * 定义工厂方法和初始化方法
+ * 
  * @since 2010.2.20
  *
  */
@@ -44,5 +46,7 @@ public @interface Instantiation {
 	
 
 	String factoryMethod() default "";
+	
+	String initMethod() default "";
 	
 }

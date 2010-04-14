@@ -1,71 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns="http://www.jiopi.org/2010/JIOPISchema" xmlns:jiopi="http://www.jiopi.org/2010/JIOPISchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.jiopi.org/2010/JIOPISchema">
-    <xs:element name="configuration">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="module" minOccurs="1" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="controlpanel" minOccurs="1" maxOccurs="unbounded">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="inner-accessory" minOccurs="0" maxOccurs="unbounded">
-                                            <xs:complexType>
-                                                <xs:attribute name="id" type="xs:string" use="required" />
-                                                <xs:attribute name="module" type="xs:string" use="required" />
-                                                <xs:attribute name="version" type="xs:string" use="optional" />
-                                                <xs:attribute name="configuration" type="xs:string" use="optional" />
-                                            </xs:complexType>
-                                        </xs:element>
-                                        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-                                            <xs:element name="accessory" minOccurs="0" maxOccurs="unbounded">
-                                                <xs:complexType>
-                                                    <xs:attribute name="id" type="xs:string" use="required" />
-                                                    <xs:attribute name="module" type="xs:string" use="required" />
-                                                    <xs:attribute name="controlpanel" type="xs:string" use="required" />
-                                                    <xs:attribute name="version" type="xs:string" use="optional" />
-                                                    <xs:attribute name="scope" use="optional">
-                                                        <xs:simpleType>
-                                                            <xs:restriction base="xs:string">
-                                                                <xs:enumeration value="singleton"/>
-                                                                <xs:enumeration value="prototype"/>
-                                                            </xs:restriction>
-                                                        </xs:simpleType>
-                                                    </xs:attribute>
-                                                    <xs:attribute name="configuration" type="xs:string" use="optional" />
-                                                </xs:complexType>
-                                            </xs:element>
-                                            <xs:element name="socket" minOccurs="0" maxOccurs="unbounded">
-                                                <xs:complexType>
-                                                    <xs:sequence>
-                                                        <xs:element name="parameter" minOccurs="0" maxOccurs="unbounded">
-                                                            <xs:complexType>
-                                                                <xs:all>
-                                                                    <xs:element name="value" type="xs:string"/>
-                                                                </xs:all>
-                                                            </xs:complexType>
-                                                        </xs:element>
-                                                    </xs:sequence>
-                                                    <xs:attribute name="from" type="xs:string" use="required" />
-                                                    <xs:attribute name="to" type="xs:string" use="required" />
-                                                </xs:complexType>
-                                            </xs:element>
-                                        </xs:sequence>
-                                    </xs:sequence>
-                                    <xs:attribute name="name" type="xs:string" use="required"/>
-                                    <xs:attribute name="id" type="xs:string" use="optional"/>
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                        <xs:attribute name="name" type="xs:string" use="required"/>
-                        <xs:attribute name="version" type="xs:string" use="optional"/>
-                    </xs:complexType>
-                    <xs:unique name="classUnique">
-                        <xs:selector xpath="jiopi:controlpanel"/>
-                        <xs:field xpath="@class"/>
-                    </xs:unique>
-                </xs:element>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+<xs:schema xmlns="http://www.jiopi.org/2010/JIOPISchema"
+	xmlns:jiopi="http://www.jiopi.org/2010/JIOPISchema" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" targetNamespace="http://www.jiopi.org/2010/JIOPISchema">
+	<xs:element name="configuration">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="module" minOccurs="1" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="controlpanel" minOccurs="1"
+								maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:choice>
+											<xs:element name="constructor" minOccurs="0"
+												maxOccurs="1">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="arg" type="parameter"
+															minOccurs="0" maxOccurs="unbounded" />
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="factory-parameter" minOccurs="0"
+												maxOccurs="1">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="arg" type="parameter"
+															minOccurs="0" maxOccurs="unbounded" />
+													</xs:sequence>
+												</xs:complexType>
+											</xs:element>
+										</xs:choice>
+										<xs:element name="properties" minOccurs="0"
+											maxOccurs="1">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="property" minOccurs="0"
+														maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:complexContent>
+																<xs:extension base="parameter">
+																	<xs:attribute name="name" type="xs:string"
+																		use="required" />
+																</xs:extension>
+															</xs:complexContent>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="inner-accessory" minOccurs="0"
+											maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:attribute name="id" type="xs:string" use="required" />
+												<xs:attribute name="module" type="xs:string"
+													use="required" />
+												<xs:attribute name="version" type="xs:string"
+													use="optional" />
+												<xs:attribute name="configuration" type="xs:string"
+													use="optional" />
+											</xs:complexType>
+										</xs:element>
+										<xs:sequence minOccurs="0" maxOccurs="unbounded">
+											<xs:element name="accessory" minOccurs="0"
+												maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:attribute name="id" type="xs:string" use="required" />
+													<xs:attribute name="module" type="xs:string"
+														use="required" />
+													<xs:attribute name="controlpanel" type="xs:string"
+														use="required" />
+													<xs:attribute name="version" type="xs:string"
+														use="optional" />
+													<xs:attribute name="retrieve" use="optional">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="true" />
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+													<xs:attribute name="configuration" type="xs:string"
+														use="optional" />
+												</xs:complexType>
+											</xs:element>
+											<xs:element name="socket" minOccurs="0" maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:sequence>
+														<xs:element name="arg" type="parameter" minOccurs="0" maxOccurs="unbounded"/>
+													</xs:sequence>
+													<xs:attribute name="from" type="xs:string" use="required" />
+													<xs:attribute name="to" type="xs:string" use="required" />
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+									</xs:sequence>
+									<xs:attribute name="name" type="xs:string" use="required" />
+									<xs:attribute name="id" type="xs:string" use="optional" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="name" type="xs:string" use="required" />
+						<xs:attribute name="version" type="xs:string" use="optional" />
+					</xs:complexType>
+					<xs:unique name="classUnique">
+						<xs:selector xpath="jiopi:controlpanel" />
+						<xs:field xpath="@class" />
+					</xs:unique>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="parameter">
+		<xs:choice>
+			<xs:element name="null" />
+			<xs:element name="value" type="xs:string" />
+		</xs:choice>
+	</xs:complexType>
 </xs:schema>

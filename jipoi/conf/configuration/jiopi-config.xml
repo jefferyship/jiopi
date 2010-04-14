@@ -2,19 +2,32 @@
 <configuration xmlns="http://www.jiopi.org/2010/JIOPISchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.jiopi.org/2010/JIOPISchema xsd/jiopi-config-configuration.xsd ">
   <module name="modulename" version="1.0.1.0">
     <controlpanel name="BlueprintName" id="ID">
+      <constructor>
+         <arg><value></value></arg>
+      </constructor>
+      <!-- 
+      <factory-parameter>
+          <arg><value></value></arg>
+          <arg><null/></arg>
+      </factory-parameter>
+       -->
+      <properties>
+          <property name="name"><value></value></property>
+          <property name="name2"><value></value></property>
+      </properties>
       <inner-accessory id="" module="" version="" configuration="ID"/>
-      <accessory controlpanel="" id="" module="" scope="singleton" version=""/>
+      <accessory controlpanel="" id="" module="" retrieve="true" version=""/>
       <socket from="" to="">
-        <parameter>
+        <arg>
           <value>value</value>
-        </parameter>
+        </arg>
       </socket>
-      <accessory controlpanel="" id="" module="" scope="singleton" version="" configuration=""/>
-      <accessory controlpanel="" id="" module="" scope="singleton" version=""/>
+      <accessory controlpanel="" id="" module="" retrieve ="true" version="" configuration=""/>
+      <accessory controlpanel="" id="" module="" retrieve="true" version=""/>
       <socket from="" to="">
-        <parameter>
+        <arg>
           <value>value</value>
-        </parameter>
+        </arg>
       </socket>
     </controlpanel>
   </module>

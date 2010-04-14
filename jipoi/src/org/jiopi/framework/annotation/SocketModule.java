@@ -20,6 +20,10 @@
  */
 package org.jiopi.framework.annotation;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 import org.jiopi.framework.core.version.JIOPI;
 
 /**
@@ -29,6 +33,8 @@ import org.jiopi.framework.core.version.JIOPI;
  * @since 2010.2.20
  *
  */
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.FIELD)
 @JIOPI
 public @interface SocketModule {
 	

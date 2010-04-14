@@ -38,10 +38,17 @@
                                             </xs:simpleType>
                                         </xs:element>
                                         <xs:element name="factory-method" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                                        <xs:element name="init-method" type="xs:string" minOccurs="0" maxOccurs="1"/>
                                     </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
-                            
+                            <xs:element name="hotswap" minOccurs="0" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="reset-method" type="xs:string" minOccurs="0" maxOccurs="1"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
                             <xs:element name="socket-module" minOccurs="0" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:simpleContent>
@@ -77,14 +84,6 @@
                                 </xs:restriction>
                             </xs:simpleType>
                         </xs:attribute>
-                        <xs:attribute name="hotswap" use="optional">
-                            <xs:simpleType>
-                                <xs:restriction base="xs:string">
-                                    <xs:enumeration value="true"/>
-                                </xs:restriction>
-                            </xs:simpleType>
-                        </xs:attribute>
-                        <xs:attribute name="reset-method" type="xs:string" use="optional"/>
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>

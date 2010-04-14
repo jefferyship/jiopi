@@ -3,16 +3,20 @@
   <hotswap>
     <class reset-method="reset">org.example.module.hotswap.**</class>
   </hotswap>
-  <controlpanel class="org.example.module.ModuleA" hotswap="true" register-controlpanel="true" reset-method="reset">
+  <controlpanel class="org.example.module.ModuleA" register-controlpanel="true">
     <instantiation>
       <instancetype>SINGLETON</instancetype>
       <factory-method>factorymethod</factory-method>
+      <init-method>initmethod</init-method>
     </instantiation>
+    <hotswap>
+        <reset-method>reset</reset-method>
+    </hotswap>
     <socket-module id="" module="" version="" configuration="">socketmodule</socket-module>
     <socket-controlpanel controlpanel="" id="" module="" version="" configuration="">socketcontrolpanel</socket-controlpanel>
   </controlpanel>
   
-  <controlpanel class="org.example.module.ModuleB" hotswap="true" register-controlpanel="true" reset-method="reset">
+  <controlpanel class="org.example.module.ModuleB" register-controlpanel="true">
     <instantiation>
       <instancetype>SINGLETON</instancetype>
       <factory-method>factorymethod</factory-method>
