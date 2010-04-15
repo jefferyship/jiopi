@@ -5,12 +5,6 @@
       <constructor>
          <arg><value></value></arg>
       </constructor>
-      <!-- 
-      <factory-parameter>
-          <arg><value></value></arg>
-          <arg><null/></arg>
-      </factory-parameter>
-       -->
       <properties>
           <property name="name"><value></value></property>
           <property name="name2"><value></value></property>
