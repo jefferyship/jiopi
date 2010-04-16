@@ -31,17 +31,11 @@ import org.jiopi.framework.core.version.JIOPI;
 @JIOPI
 public interface ModuleConsole {
 	
-	public Object dynamicOperate(String registerName,Object... args);
+	public <T> T operate(String registerName,Class<T> c,Object... args);
 	
-	public Object operate(String registerName,Object... args);
+	public <T> T variable(String registerName,Class<T> c);
 	
-	public Object dynamicVariable(String registerName);
-	
-	public Object variable(String registerName);
-	
-	public Object accessControlPanel(String registerName,Object... args);
-	
-	public ControlPanel accessDynamicControlPanel(String registerName,Object... args);
+	public <T> T accessControlPanel(String registerName,Class<T> c,Object... args);
 
 	public ControlPanel accessStaticControlPanel(String registerName);
 	

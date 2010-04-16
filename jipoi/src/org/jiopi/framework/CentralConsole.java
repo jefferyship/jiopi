@@ -49,18 +49,18 @@ public class CentralConsole{
 		return cck.accessModuleConsole(moduleName,compatibleVersion); 
 	}
 	
-	public static Object objectOperate(Object obj,String registerName,Object... args){
+	public static <T> T objectOperate(Object obj,String registerName,Class<T> c,Object... args){
 		if( cck == null){
 			throw new CentralConsoleNotInitializedException();
 		}
-		return cck.objectOperate(obj, registerName, args);
+		return cck.objectOperate(obj, registerName,c, args);
 	}
 	
-	public static Object objectVariable(Object obj,String variableName){
+	public static <T> T objectVariable(Object obj,String variableName,Class<T> c){
 		if( cck == null){
 			throw new CentralConsoleNotInitializedException();
 		}
-		return cck.objectVariable(obj, variableName);
+		return cck.objectVariable(obj, variableName,c);
 	}
 	
 	public static void setRootClassLoader(ClassLoader classLoader){

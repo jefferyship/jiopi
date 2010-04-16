@@ -32,8 +32,8 @@ import org.jiopi.framework.core.version.JIOPI;
 @JIOPI
 public interface ControlPanel {
 	
-	public Object operate(String registerName,Object... args);
+	public <T> T operate(String registerName,Class<T> c,Object... args);
 	
-	public Object variable(String variableName);
+	public <T> T variable(String variableName,Class<T> c);
 	
 }

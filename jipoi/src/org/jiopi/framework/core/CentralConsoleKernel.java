@@ -35,9 +35,9 @@ public interface CentralConsoleKernel {
 	
 	public ModuleConsole accessModuleConsole(String moduleName,String compatibleVersion);
 	
-	public Object objectOperate(Object obj,String registerName,Object... args);
+	public <T> T objectOperate(Object obj,String registerName,Class<T> c,Object... args);
 	
-	public Object objectVariable(Object obj,String variableName);
+	public <T> T objectVariable(Object obj,String variableName,Class<T> c);
 	
 	public void setRootClassLoader(ClassLoader classLoader);
 	

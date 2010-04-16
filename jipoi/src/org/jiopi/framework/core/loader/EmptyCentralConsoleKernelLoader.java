@@ -37,20 +37,15 @@ public class EmptyCentralConsoleKernelLoader implements
 
 	public CentralConsoleKernel loadCentralConsoleKernel() {
 		return new CentralConsoleKernel() {
-			public ModuleConsole accessModuleConsole(String moduleName,
-					String compatibleVersion) {
-				return null;
-			}
-			public ClassLoader getClassLoader() {
-				return null;
-			}
+			public ModuleConsole accessModuleConsole(String moduleName,String compatibleVersion) {return null;}
+			public ClassLoader getClassLoader() {return null;}
 			public void setRootClassLoader(ClassLoader classLoader) {}
 			public void start(){}
 			public void restart(){}
 			public void shutdown(){}
 			public void refreshResource(String modulename, String version) {	}
-			public Object objectOperate(Object obj, String registerName,Object... args) {return null;}
-			public Object objectVariable(Object obj, String variableName) {return null;	}
+			public <T> T objectOperate(Object obj, String registerName,Class<T> c, Object... args) {return null;}
+			public <T> T objectVariable(Object obj, String variableName,Class<T> c) {return null;}
 		};
 	}
 
