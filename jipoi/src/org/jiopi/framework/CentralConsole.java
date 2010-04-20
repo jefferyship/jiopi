@@ -49,6 +49,10 @@ public class CentralConsole{
 		return cck.accessModuleConsole(moduleName,compatibleVersion); 
 	}
 	
+	public static <T> T accessControlPanel(String moduleName,String compatibleVersion,String registerName,Class<T> c,Object... args){
+		return accessModuleConsole(moduleName,compatibleVersion).accessControlPanel(registerName, c, args);
+	}
+	
 	public static <T> T objectOperate(Object obj,String registerName,Class<T> c,Object... args){
 		if( cck == null){
 			throw new CentralConsoleNotInitializedException();
