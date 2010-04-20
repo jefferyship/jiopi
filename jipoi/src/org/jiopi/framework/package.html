@@ -1,0 +1,19 @@
+<html>
+   <head>
+       <title>JIOPi Framework</title>
+       <meta http-equiv=content-type content="text/html; charset=UTF-8">
+   </head>
+   <body>
+         <h1>JIOPi Framework</h1>
+      <p>
+        关于自动类型转换的说明:<br/>
+            通过指定返回值类的类对象,明确要获取的对象类型,一般应该为接口<br/>
+	 或者指定ControlPanel类(当指定返回值类型为null时认为是ControlPanel对象)从而获取可动态调用的类对象控制面板<br/>
+	 如果给定值是ControlPanel,仅当返回值为非java基本类型时返回ControlPanel对象,否则直接将返回值返回<br/>
+	java基本对象是指 包名以java开头的类,或基本类型(byte int 数组 等)
+      </p>
+
+   </body>
+</html>
+
+

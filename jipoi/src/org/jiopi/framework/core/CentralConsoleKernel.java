@@ -27,16 +27,44 @@ import org.jiopi.framework.core.version.JIOPI;
  * 
  * 中央控制台的核心访问接口
  * 
- * @since 2010.2.20
+ * @version 0.1 , 2010.2.20
+ * @since JIOPi0.1 ,2010.2.20
  *
  */
 @JIOPI
 public interface CentralConsoleKernel {
 	
+	/**
+	 * 
+	 * @param moduleName
+	 * @param compatibleVersion
+	 * @return
+	 * @see org.jiopi.framework.CentralConsole#accessModuleConsole(String, String)
+	 * @since JIOPi0.1
+	 */
 	public ModuleConsole accessModuleConsole(String moduleName,String compatibleVersion);
 	
+	/**
+	 * 
+	 * @param obj
+	 * @param registerName
+	 * @param c
+	 * @param args
+	 * @return
+	 * @see org.jiopi.framework.CentralConsole#objectOperate(Object, String, Class, Object...)
+	 * @since JIOPi0.1
+	 */
 	public <T> T objectOperate(Object obj,String registerName,Class<T> c,Object... args);
 	
+	/**
+	 * 
+	 * @param obj
+	 * @param variableName
+	 * @param c
+	 * @return
+	 * @see org.jiopi.framework.CentralConsole#objectVariable(Object, String, Class)
+	 * @since JIOPi0.1
+	 */
 	public <T> T objectVariable(Object obj,String variableName,Class<T> c);
 	
 	public void setRootClassLoader(ClassLoader classLoader);

@@ -24,7 +24,8 @@ import org.jiopi.framework.core.version.JIOPI;
 
 /**
  * 
- * @since 2010.2.20
+ * @version 0.1 2010.2.20
+ * @since JIOPi0.1 2010.2.20
  *
  */
 @JIOPI

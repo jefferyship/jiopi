@@ -30,12 +30,18 @@ import org.jiopi.framework.exception.CentralConsoleInitializeException;
  * 
  * 核心程序装载工厂
  * 
- * @since 2010.2.21
+ * @version 0.1 2010.2.21
+ * @since JIOPi0.1 2010.2.21
  *
  */
 @JIOPI
 public class CentralConsoleKernelLoaderFactory {
 	
+	/**
+	 * 
+	 * @return
+	 * @since JIOPi0.1
+	 */
 	public static CentralConsoleKernel loadCentralConsoleKernel() {
 		String loaderClass = Config.getConfig( JiopiConfigConstants.KERNEL_LOADER_CLASS );
 		if( loaderClass==null ) {

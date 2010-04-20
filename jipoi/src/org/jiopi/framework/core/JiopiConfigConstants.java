@@ -26,19 +26,42 @@ import org.jiopi.framework.core.version.JIOPI;
  * 
  * JIOPI 配置文件常量
  * 
- * @since 2010.4.10
+ * @version 0.1 , 2010.4.10
+ * @since JIOPi0.1 , 2010.4.10
  *
  */
 @JIOPI
 public class JiopiConfigConstants {
 	
+	/**
+	 * JIOPI的配置文件名
+	 * @since JIOPi0.1
+	 */
 	public static final String CONFIG_FILE = "jiopi.properties";
 	
+	/**
+	 * 配置框架初始化实现类的 属性名
+	 * @since JIOPi0.1
+	 */
 	public static final String KERNEL_INITIALIZER_CLASS = "jiopi.kernel.initializer.class";
+	
+	/**
+	 * 配置框架加载实现类的 属性名
+	 * @since JIOPi0.1
+	 */
 	public static final String KERNEL_LOADER_CLASS = "jiopi.kernel.loader.class";
 	
+	/**
+	 * 热部署配置的 属性名
+	 * @since JIOPi0.1
+	 */
 	public static final String HOTSWAP = "jiopi.hotswap";
+	/**
+	 * 热部署的默认配置值
+	 * @since JIOPi0.1
+	 */
 	public static final String HOTSWAP_DEFAULT="false";
+	
 	
 	public static final String CASCADING_START = "jiopi.resourcepools.cascading-start";
 	public static final String CASCADING_START_DEFAULT="this";

@@ -28,14 +28,18 @@ import org.jiopi.framework.core.version.JIOPI;
 /**
  * 框架初始化函数
  * 
- * 本函数应当在整个框架未被调用之前调用,以便系统进行更高级别的初始化操作
+ * 本类的初始化函数建议在整个框架未被调用之前调用,以便系统进行较高级别的初始化操作
  * 
- * @since 2010.4.11
+ * @version 0.1 2010.4.11
+ * @since JIOPi0.1 2010.4.11
  *
  */
 @JIOPI
 public class FrameworkInitializer {
 	
+	/**
+	 * @since JIOPi0.1
+	 */
 	public static void initialize(){
 		String initializerClass = Config.getConfig( JiopiConfigConstants.KERNEL_INITIALIZER_CLASS );
 		if(initializerClass!=null){

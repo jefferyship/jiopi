@@ -26,14 +26,32 @@ import org.jiopi.framework.core.version.JIOPI;
  * 
  * 组件控制面板
  * 
- * @since 2010.2.20
+ * @version 0.1 , 2010.2.20
+ * @since JIOPi0.1 , 2010.2.20
  *
  */
 @JIOPI
 public interface ControlPanel {
 	
+	/**
+	 * 动态public方法调用
+	 * 
+	 * @param registerName
+	 * @param c
+	 * @param args
+	 * @return
+	 */
 	public <T> T operate(String registerName,Class<T> c,Object... args);
 	
+	/**
+	 * 
+	 * 动态public成员变量访问
+	 * 
+	 * @param <T>
+	 * @param variableName
+	 * @param c
+	 * @return
+	 */
 	public <T> T variable(String variableName,Class<T> c);
 	
 }

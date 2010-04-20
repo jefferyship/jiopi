@@ -30,18 +30,41 @@ import org.jiopi.framework.exception.CentralConsoleNotInitializedException;
  * JIOPi系统的总控操作台
  * 
  * 
- * @since 2010.2.20
+ * @version 0.1 , 2010.2.20
+ * @since JIOPi0.1 , 2010.2.20
  *
  */
 @JIOPI
 public class CentralConsole{
 	
+	/**
+	 * 
+	 * @since JIOPi0.1
+	 */
 	private static CentralConsoleKernel cck = CentralConsoleKernelLoaderFactory.loadCentralConsoleKernel();
 	
+	/**
+	 * 
+	 * 根据moduleName获取最新版本的ModuleConsole对象
+	 * 
+	 * @param moduleName
+	 * @return 指定名称的ModuleConsole对象
+	 * @see CentralConsole#accessModuleConsole(String, String)
+	 * @since JIOPi0.1
+	 */
 	public static ModuleConsole accessModuleConsole(String moduleName) {
 		return accessModuleConsole(moduleName,null);
 	}
 	
+	/**
+	 * 
+	 * 根据 moduleName compatibleVersion 返回最匹配的ModuleConsole
+	 * 
+	 * @param moduleName
+	 * @param compatibleVersion
+	 * @return
+	 * @since JIOPi0.1
+	 */
 	public static ModuleConsole accessModuleConsole(String moduleName,String compatibleVersion) {
 		if( cck == null){
 			throw new CentralConsoleNotInitializedException();
@@ -49,10 +72,34 @@ public class CentralConsole{
 		return cck.accessModuleConsole(moduleName,compatibleVersion); 
 	}
 	
+	/**
+	 * 
+	 * 直接从CentralConsole获取指定的对象实例
+	 * 
+	 * 
+	 * @param moduleName
+	 * @param compatibleVersion
+	 * @param registerName
+	 * @param c
+	 * @param args
+	 * @return
+	 * @since JIOPi0.1
+	 */
 	public static <T> T accessControlPanel(String moduleName,String compatibleVersion,String registerName,Class<T> c,Object... args){
 		return accessModuleConsole(moduleName,compatibleVersion).accessControlPanel(registerName, c, args);
 	}
 	
+	
+	/**
+	 * 便捷对象反射调用函数,调用对象的指定public方法
+	 * 
+	 * @param obj
+	 * @param registerName
+	 * @param c
+	 * @param args
+	 * @return
+	 * @since JIOPi0.1
+	 */
 	public static <T> T objectOperate(Object obj,String registerName,Class<T> c,Object... args){
 		if( cck == null){
 			throw new CentralConsoleNotInitializedException();
@@ -60,6 +107,15 @@ public class CentralConsole{
 		return cck.objectOperate(obj, registerName,c, args);
 	}
 	
+	/**
+	 * 便捷对象反射调用函数,访问对象的public成员变量
+	 * 
+	 * @param obj
+	 * @param variableName
+	 * @param c
+	 * @return
+	 * @since JIOPi0.1
+	 */
 	public static <T> T objectVariable(Object obj,String variableName,Class<T> c){
 		if( cck == null){
 			throw new CentralConsoleNotInitializedException();
