@@ -8,9 +8,13 @@
       <p>
         关于自动类型转换的说明:<br/>
             通过指定返回值类的类对象,明确要获取的对象类型,一般应该为接口<br/>
-	 或者指定ControlPanel类(当指定返回值类型为null时认为是ControlPanel对象)从而获取可动态调用的类对象控制面板<br/>
+	 或者指定ControlPanel类从而获取可动态调用的类对象控制面板<br/>
+	 
 	 如果给定值是ControlPanel,仅当返回值为非java基本类型时返回ControlPanel对象,否则直接将返回值返回<br/>
-	java基本对象是指 包名以java开头的类,或基本类型(byte int 数组 等)
+	 也就是说,如果返回值类型是 java基本对象,不允许指定返回值是ControlPanel,否则一定会出强制类型转换异常(当返回值不是null的时候)<br/>
+	 当指定返回值类型为null时不做任何类型转换<br/>
+	 当返回值是null时,永远返回null,而不会再包装一个ControlPanel对象,即使指定了<br/>
+	说明:java基本对象是指 包名以java开头的类,或基本类型(byte int 数组 等)
       </p>
 
    </body>
