@@ -89,6 +89,22 @@ public class CentralConsole{
 		return accessModuleConsole(moduleName,compatibleVersion).accessControlPanel(registerName, returnType, args);
 	}
 	
+	/**
+	 * 
+	 * 直接从CentralConsole获取指定的对象实例,使用精确变量表
+	 * 
+	 * @param moduleName
+	 * @param compatibleVersion
+	 * @param registerName
+	 * @param returnType
+	 * @param parameterTypes
+	 * @param args
+	 * @return
+	 */
+	public static <T> T accessControlPanelStrict(String moduleName,String compatibleVersion,String registerName,Class<T> returnType,Object[] parameterTypes,Object... args){
+		return accessModuleConsole(moduleName,compatibleVersion).accessControlPanelStrict(registerName, returnType,parameterTypes ,args);
+	}
+	
 	
 	/**
 	 * 便捷对象反射调用函数,调用对象的指定public方法
