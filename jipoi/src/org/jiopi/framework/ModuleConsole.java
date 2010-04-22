@@ -40,26 +40,26 @@ public interface ModuleConsole {
 	 * </P>
 	 * 
 	 * @param registerName
-	 * @param c
+	 * @param returnType
 	 * @param args
 	 * @return
 	 * @since JIOPi0.1
 	 */
-	public <T> T operate(String registerName,Class<T> c,Object... args);
+	public <T> T operate(String registerName,Class<T> returnType,Object... args);
 	
 	/**
 	 * 
 	 * 使用明确的参数表调用方法
 	 * 
 	 * @param registerName
-	 * @param c
+	 * @param returnType
 	 * @param parameterTypes
 	 * @param args
 	 * @return
 	 * @see ModuleConsole#operate(String, Class, Object...)
 	 * @since JIOPi0.1
 	 */
-	public <T> T operateStrict(String registerName,Class<T> c,Object[] parameterTypes,Object... args);
+	public <T> T operateStrict(String registerName,Class<T> returnType,Object[] parameterTypes,Object... args);
 	
 	/**
 	 * 
@@ -70,11 +70,11 @@ public interface ModuleConsole {
 	 * </P>
 	 * 
 	 * @param registerName
-	 * @param c
+	 * @param returnType
 	 * @return
 	 * @since JIOPi0.1
 	 */
-	public <T> T staticVariable(String registerName,Class<T> c);
+	public <T> T staticVariable(String registerName,Class<T> returnType);
 	
 	/**
 	 * 
@@ -85,12 +85,12 @@ public interface ModuleConsole {
 	 * </P>
 	 * 
 	 * @param registerName
-	 * @param c
+	 * @param returnType
 	 * @param args
 	 * @return
 	 * @since JIOPi0.1
 	 */
-	public <T> T accessControlPanel(String registerName,Class<T> c,Object... args);
+	public <T> T accessControlPanel(String registerName,Class<T> returnType,Object... args);
 	
 	/**
 	 * 

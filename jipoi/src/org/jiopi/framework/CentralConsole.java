@@ -80,13 +80,13 @@ public class CentralConsole{
 	 * @param moduleName
 	 * @param compatibleVersion
 	 * @param registerName
-	 * @param c
+	 * @param returnType
 	 * @param args
 	 * @return
 	 * @since JIOPi0.1
 	 */
-	public static <T> T accessControlPanel(String moduleName,String compatibleVersion,String registerName,Class<T> c,Object... args){
-		return accessModuleConsole(moduleName,compatibleVersion).accessControlPanel(registerName, c, args);
+	public static <T> T accessControlPanel(String moduleName,String compatibleVersion,String registerName,Class<T> returnType,Object... args){
+		return accessModuleConsole(moduleName,compatibleVersion).accessControlPanel(registerName, returnType, args);
 	}
 	
 	
@@ -96,16 +96,16 @@ public class CentralConsole{
 	 * 
 	 * @param obj
 	 * @param registerName
-	 * @param c
+	 * @param returnType
 	 * @param args
 	 * @return
 	 * @since JIOPi0.1
 	 */
-	public static <T> T objectOperate(Object obj,String registerName,Class<T> c,Object... args){
+	public static <T> T objectOperate(Object obj,String registerName,Class<T> returnType,Object... args){
 		if( cck == null){
 			throw new CentralConsoleNotInitializedException();
 		}
-		return cck.objectOperate(obj, registerName,c, args);
+		return cck.objectOperate(obj, registerName,returnType, args);
 	}
 	
 	/**
@@ -115,17 +115,17 @@ public class CentralConsole{
 	 * </P>
 	 * @param obj
 	 * @param registerName
-	 * @param c
+	 * @param returnType
 	 * @param parameterTypes  参数类型表
 	 * @param args
 	 * @return
 	 * @since JIOPi0.1
 	 */
-	public <T> T objectOperateStrict(Object obj,String registerName,Class<T> c,Object[] parameterTypes,Object... args){
+	public <T> T objectOperateStrict(Object obj,String registerName,Class<T> returnType,Object[] parameterTypes,Object... args){
 		if( cck == null){
 			throw new CentralConsoleNotInitializedException();
 		}
-		return cck.objectOperateStrict(obj, registerName, c, parameterTypes, args);
+		return cck.objectOperateStrict(obj, registerName, returnType, parameterTypes, args);
 	}
 	
 	/**
@@ -133,15 +133,15 @@ public class CentralConsole{
 	 * 
 	 * @param obj
 	 * @param variableName
-	 * @param c
+	 * @param returnType
 	 * @return
 	 * @since JIOPi0.1
 	 */
-	public static <T> T objectVariable(Object obj,String variableName,Class<T> c){
+	public static <T> T objectVariable(Object obj,String variableName,Class<T> returnType){
 		if( cck == null){
 			throw new CentralConsoleNotInitializedException();
 		}
-		return cck.objectVariable(obj, variableName,c);
+		return cck.objectVariable(obj, variableName,returnType);
 	}
 	
 	public static void setRootClassLoader(ClassLoader classLoader){

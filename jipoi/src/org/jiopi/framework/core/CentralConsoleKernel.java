@@ -48,37 +48,37 @@ public interface CentralConsoleKernel {
 	 * 
 	 * @param obj
 	 * @param registerName
-	 * @param c
+	 * @param returnType
 	 * @param args
 	 * @return
 	 * @see org.jiopi.framework.CentralConsole#objectOperate(Object, String, Class, Object...)
 	 * @since JIOPi0.1
 	 */
-	public <T> T objectOperate(Object obj,String registerName,Class<T> c,Object... args);
+	public <T> T objectOperate(Object obj,String registerName,Class<T> returnType,Object... args);
 	
 	/**
 	 * 
 	 * @param <T>
 	 * @param obj
 	 * @param registerName
-	 * @param c
+	 * @param returnType
 	 * @param parameterTypes
 	 * @param args
 	 * @return
 	 * @since JIOPi0.1
 	 */
-	public <T> T objectOperateStrict(Object obj,String registerName,Class<T> c,Object[] parameterTypes,Object... args);
+	public <T> T objectOperateStrict(Object obj,String registerName,Class<T> returnType,Object[] parameterTypes,Object... args);
 	
 	/**
 	 * 
 	 * @param obj
 	 * @param variableName
-	 * @param c
+	 * @param returnType
 	 * @return
 	 * @see org.jiopi.framework.CentralConsole#objectVariable(Object, String, Class)
 	 * @since JIOPi0.1
 	 */
-	public <T> T objectVariable(Object obj,String variableName,Class<T> c);
+	public <T> T objectVariable(Object obj,String variableName,Class<T> returnType);
 	
 	public void setRootClassLoader(ClassLoader classLoader);
 	
