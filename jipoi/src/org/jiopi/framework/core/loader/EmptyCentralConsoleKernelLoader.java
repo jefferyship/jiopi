@@ -47,6 +47,8 @@ public class EmptyCentralConsoleKernelLoader implements
 			public void refreshResource(String modulename, String version) {	}
 			public <T> T objectOperate(Object obj, String registerName,Class<T> c, Object... args) {return null;}
 			public <T> T objectVariable(Object obj, String variableName,Class<T> c) {return null;}
+			public <T> T objectOperateStrict(Object obj, String registerName,Class<T> c, Object[] parameterTypes, Object... args) {return null;
+			}
 		};
 	}
 

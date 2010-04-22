@@ -92,6 +92,7 @@ public class CentralConsole{
 	
 	/**
 	 * 便捷对象反射调用函数,调用对象的指定public方法
+	 * <p>如果对象是一个类对象,则相当于访问其静态方法</p>
 	 * 
 	 * @param obj
 	 * @param registerName
@@ -105,6 +106,26 @@ public class CentralConsole{
 			throw new CentralConsoleNotInitializedException();
 		}
 		return cck.objectOperate(obj, registerName,c, args);
+	}
+	
+	/**
+	 * 使用明确的参数类型表调用指定方法
+	 * <P>
+	 * 参数类型表可以是String或Class对象,详情参阅包说明
+	 * </P>
+	 * @param obj
+	 * @param registerName
+	 * @param c
+	 * @param parameterTypes  参数类型表
+	 * @param args
+	 * @return
+	 * @since JIOPi0.1
+	 */
+	public <T> T objectOperateStrict(Object obj,String registerName,Class<T> c,Object[] parameterTypes,Object... args){
+		if( cck == null){
+			throw new CentralConsoleNotInitializedException();
+		}
+		return cck.objectOperateStrict(obj, registerName, c, parameterTypes, args);
 	}
 	
 	/**

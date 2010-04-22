@@ -40,8 +40,22 @@ public interface ControlPanel {
 	 * @param c
 	 * @param args
 	 * @return
+	 * @since JIOPi0.1
 	 */
 	public <T> T operate(String registerName,Class<T> c,Object... args);
+	
+	/**
+	 * 
+	 * 动态public方法调用,使用明确参数表
+	 * 
+	 * @param registerName
+	 * @param c
+	 * @param parameterTypes
+	 * @param args
+	 * @return
+	 * @since JIOPi0.1
+	 */
+	public <T> T operateStrict(String registerName,Class<T> c,Object[] parameterTypes,Object... args);
 	
 	/**
 	 * 
@@ -51,6 +65,7 @@ public interface ControlPanel {
 	 * @param variableName
 	 * @param c
 	 * @return
+	 * @since JIOPi0.1
 	 */
 	public <T> T variable(String variableName,Class<T> c);
 	

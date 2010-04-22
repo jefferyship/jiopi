@@ -47,6 +47,19 @@ public interface ModuleConsole {
 	 */
 	public <T> T operate(String registerName,Class<T> c,Object... args);
 	
+	/**
+	 * 
+	 * 使用明确的参数表调用方法
+	 * 
+	 * @param registerName
+	 * @param c
+	 * @param parameterTypes
+	 * @param args
+	 * @return
+	 * @see ModuleConsole#operate(String, Class, Object...)
+	 * @since JIOPi0.1
+	 */
+	public <T> T operateStrict(String registerName,Class<T> c,Object[] parameterTypes,Object... args);
 	
 	/**
 	 * 
@@ -61,7 +74,7 @@ public interface ModuleConsole {
 	 * @return
 	 * @since JIOPi0.1
 	 */
-	public <T> T variable(String registerName,Class<T> c);
+	public <T> T staticVariable(String registerName,Class<T> c);
 	
 	/**
 	 * 

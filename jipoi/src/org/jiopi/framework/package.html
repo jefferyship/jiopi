@@ -6,7 +6,7 @@
    <body>
          <h1>JIOPi Framework</h1>
       <p>
-        关于自动类型转换的说明:<br/>
+        关于自动类型转换的说明:<br/><br/>
             通过指定返回值类的类对象,明确要获取的对象类型,一般应该为接口<br/>
 	 或者指定ControlPanel类从而获取可动态调用的类对象控制面板<br/>
 	 
@@ -15,6 +15,16 @@
 	 当指定返回值类型为null时不做任何类型转换<br/>
 	 当返回值是null时,永远返回null,而不会再包装一个ControlPanel对象,即使指定了<br/>
 	说明:java基本对象是指 包名以java开头的类,或基本类型(byte int 数组 等)
+      </p>
+      <p>
+        关于指定混合参数类型表:<br/><br/>
+          混合参数类型表是一个Object[],与java反射调用在指定参数类型不同,除了可以使用类对象来明确，还可以使用
+    类的字符串表示,如参数是一个 org.example.A,则可以使用 new Object[]{"org.example.A"};来指定<br/>
+    关于字符串指定类的特别说明:<br/>
+    虽然对于java标准类型不提倡使用字符串方式指定,但还是提供了便捷支持:<br/>
+    8种基本类型可以直接使用类型名,如 new Object[]{"int","byte"}<br/>
+    如果是数组,则可以直接在类名后加'[]'表示,如 new Object[]{"int[]","org.example.A[]"}<br/>
+   当然,对于上例,还是建议这样书写:new Object[]{int[].class,"org.example.A[]"}
       </p>
 
    </body>
