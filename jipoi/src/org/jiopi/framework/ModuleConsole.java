@@ -94,6 +94,21 @@ public interface ModuleConsole {
 	
 	/**
 	 * 
+	 * <P>
+	 * JIOPi0.1:通过 全类名 创建对象实例,根据传递的参数表精确选择构造器<br/>
+	 * </P>
+	 * 
+	 * @param registerName
+	 * @param returnType
+	 * @param parameterTypes
+	 * @param args
+	 * @return
+	 * @since JIOPi0.1
+	 */
+	public <T> T accessControlPanelStrict(String registerName,Class<T> returnType,Object[] parameterTypes,Object... args);
+	
+	/**
+	 * 
 	 * 获得类的静态方法访问控制面板
 	 * 
 	 * <P>
