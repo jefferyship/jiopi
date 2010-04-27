@@ -66,7 +66,7 @@ public class JiopiConfigConstants {
 	public static final String CASCADING_START = "jiopi.resourcepools.cascading-start";
 	public static final String CASCADING_START_DEFAULT="this";
 	
-	public static final String RESOURCEPOOL_PREFIX = "jiopi.resourcepool";
+	public static final String RESOURCEPOOL_PREFIX = "jiopi.resourcepool.";
 	
 	public static final String RESOURCEPOOL_PATH="path";
 	
