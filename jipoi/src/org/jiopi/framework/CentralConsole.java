@@ -100,9 +100,39 @@ public class CentralConsole{
 	 * @param parameterTypes
 	 * @param args
 	 * @return
+	 * @since JIOPi0.1
 	 */
 	public static <T> T accessControlPanelStrict(String moduleName,String compatibleVersion,String registerName,Class<T> returnType,Object[] parameterTypes,Object... args){
 		return accessModuleConsole(moduleName,compatibleVersion).accessControlPanelStrict(registerName, returnType,parameterTypes ,args);
+	}
+	
+	/**
+	 * 从CentralConsole直接运行方法
+	 * @param moduleName
+	 * @param compatibleVersion
+	 * @param registerName
+	 * @param returnType
+	 * @param args
+	 * @return
+	 * @since JIOPi0.1
+	 */
+	public <T> T operate(String moduleName,String compatibleVersion,String registerName,Class<T> returnType,Object... args){
+		return accessModuleConsole(moduleName,compatibleVersion).operate(registerName, returnType, args);
+	}
+	
+	/**
+	 * 从CentralConsole直接运行方法
+	 * @param moduleName
+	 * @param compatibleVersion
+	 * @param registerName
+	 * @param returnType
+	 * @param parameterTypes
+	 * @param args
+	 * @return
+	 * @since JIOPi0.1
+	 */
+	public <T> T operateStrict(String moduleName,String compatibleVersion,String registerName,Class<T> returnType,Object[] parameterTypes,Object... args){
+		return accessModuleConsole(moduleName,compatibleVersion).operateStrict(registerName, returnType, parameterTypes, args);
 	}
 	
 	

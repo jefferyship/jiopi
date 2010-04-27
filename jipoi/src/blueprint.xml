@@ -18,7 +18,7 @@
  under the License.
 -->
  
-<blueprint name="jiopi" version="0.3" xmlns="http://www.jiopi.org/2010/JIOPISchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.jiopi.org/2010/JIOPISchema ../conf/annotation/xsd/jiopi-config-blueprint.xsd ">
+<blueprint name="jiopi" version="0.1" xmlns="http://www.jiopi.org/2010/JIOPISchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.jiopi.org/2010/JIOPISchema ../conf/annotation/xsd/jiopi-config-blueprint.xsd ">
   <version-interface>org.jiopi.framework.core.version.JIOPI</version-interface>
   <exports>
     <export>org.jiopi.framework.**</export>
