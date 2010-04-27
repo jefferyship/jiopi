@@ -70,7 +70,7 @@
     
     <xs:simpleType name='blueprintVersionType'>
         <xs:restriction base='xs:string'>
-            <xs:pattern value='\d\.\d'/>
+            <xs:pattern value='\d+\.\d+'/>
         </xs:restriction>
     </xs:simpleType>
 </xs:schema>

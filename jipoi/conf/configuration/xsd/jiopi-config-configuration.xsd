@@ -4,8 +4,19 @@
 	elementFormDefault="qualified" targetNamespace="http://www.jiopi.org/2010/JIOPISchema">
 	<xs:element name="configuration">
 		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="module" minOccurs="1" maxOccurs="unbounded">
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			    <xs:element name="redefine" minOccurs="0" maxOccurs="unbounded">
+			        <xs:complexType>
+			            <xs:simpleContent>
+			                <xs:extension base="xs:string">
+			                    <xs:attribute name="module" type="xs:string" use="required" />
+			                    <xs:attribute name="version" type="compatibleVersion" use="optional" />
+			                    <xs:attribute name="controlpanel" type="xs:string" use="required" />
+			                </xs:extension>
+			            </xs:simpleContent>
+			        </xs:complexType>
+			    </xs:element>
+				<xs:element name="module" minOccurs="0" maxOccurs="unbounded">
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="controlpanel" minOccurs="1"
@@ -107,4 +118,10 @@
 			<xs:element name="value" type="xs:string" />
 		</xs:choice>
 	</xs:complexType>
+    
+    <xs:simpleType name='compatibleVersion'>
+        <xs:restriction base='xs:string'>
+            <xs:pattern value='\d+(\.\d+){0,4}'/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>

@@ -25,4 +25,5 @@
       </socket>
     </controlpanel>
   </module>
+  <redefine module="moduleName" version="1.10.0" controlpanel="">className</redefine>
 </configuration>
