@@ -30,13 +30,13 @@ import org.jiopi.framework.annotation.Blueprint;
  * 
  * JIOPI 版本定义
  * 
- * @version 0.1 2010.4.8
+ * @version 0.2 2010.5.6
  * @since JIOPi0.1 2010.4.8
  *
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@Blueprint(name="jiopi", version="0.1", versionInterface=JIOPI.class)
+@Blueprint(name="jiopi", version="0.2", versionInterface=JIOPI.class)
 public @interface JIOPI {
 
 }

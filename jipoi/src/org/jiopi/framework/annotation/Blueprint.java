@@ -32,7 +32,10 @@ import org.jiopi.framework.core.version.JIOPI;
  * 
  * 用于标明一个接口类所属的 蓝图 名称 和 版本
  * 
- * @since 2010.2.20
+ * 蓝图 应当定义一个统一版本注解 ，并用该注解 对 版本注解进行注解，从而将一个蓝图的版本说明放置于同一个地方
+ * 
+ * @version 0.2 2010.5.6
+ * @since JIOPi0.2 2010.5.6
  *
  */
 @Retention(RetentionPolicy.RUNTIME)
@@ -40,10 +43,23 @@ import org.jiopi.framework.core.version.JIOPI;
 @JIOPI
 public @interface Blueprint {
 	
+	/**
+	 * 蓝图名称
+	 * 
+	 * @since JIOPi0.2
+	 */
 	String name();
 	
+	/**
+	 * 蓝图版本
+	 * @since JIOPi0.2
+	 */
 	String version();
 	
+	/**
+	 * 蓝图的版本定义接口,一个蓝图的任何一个版本都应当包含相同的一个版本定义接口
+	 * @since JIOPi0.2
+	 */
 	Class<?> versionInterface();
 	
 }

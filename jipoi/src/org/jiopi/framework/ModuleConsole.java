@@ -25,7 +25,7 @@ import org.jiopi.framework.core.version.JIOPI;
 /**
  * 组件控制台
  * 
- * @version 0.1 2010.2.20
+ * @version 0.2 2010.5.6
  * @since JIOPi0.1 2010.2.20
  *
  */
@@ -36,6 +36,7 @@ public interface ModuleConsole {
 	 * 动态调用组件的public方法
 	 * 
 	 * <P>
+	 * JIOPi0.2:允许在接口中定义方法别名,以实现快捷调用<br/>
 	 * JIOPi0.1:使用 全类名.方法名 调用类的静态方法,自动根据参数匹配最佳函数<br/>
 	 * </P>
 	 * 
@@ -50,6 +51,7 @@ public interface ModuleConsole {
 	/**
 	 * 
 	 * 使用明确的参数表调用方法
+	 * 
 	 * 
 	 * @param registerName
 	 * @param returnType
@@ -66,6 +68,7 @@ public interface ModuleConsole {
 	 * 动态调用组件的public成员变量
 	 * 
 	 * <P>
+	 * JIOPi0.2:允许在接口中定义静态变量别名,以实现快捷调用<br/>
 	 * JIOPi0.1:使用 全类名.变量名 访问类的静态成员变量<br/>
 	 * </P>
 	 * 
@@ -81,8 +84,13 @@ public interface ModuleConsole {
 	 * 获得对象实例
 	 * 
 	 * <P>
+	 * JIOPi0.2:允许在接口中定义接口的别名，使用接口名/别名 获得接口对应的实现类<br/>
 	 * JIOPi0.1:通过 全类名 创建对象实例,根据传递的参数自动匹配最佳构造器<br/>
 	 * </P>
+	 * <p>
+	 * 从0.2开始,在使用接口获取对象时,仅在 实现类定义为 原型时，参数会作为构造器/工厂方法
+	 * 的参数传递，以获取对象实例，但 这个规则应当在 蓝图 中进行说明
+	 * </p>
 	 * 
 	 * @param registerName
 	 * @param returnType
@@ -94,15 +102,14 @@ public interface ModuleConsole {
 	
 	/**
 	 * 
-	 * <P>
-	 * JIOPi0.1:通过 全类名 创建对象实例,根据传递的参数表精确选择构造器<br/>
-	 * </P>
+	 * 使用精确变量表获得对象实例
 	 * 
 	 * @param registerName
 	 * @param returnType
 	 * @param parameterTypes
 	 * @param args
 	 * @return
+	 * @see #accessControlPanel(String, Class, Object...)
 	 * @since JIOPi0.1
 	 */
 	public <T> T accessControlPanelStrict(String registerName,Class<T> returnType,Object[] parameterTypes,Object... args);

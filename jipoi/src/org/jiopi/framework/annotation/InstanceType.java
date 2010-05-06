@@ -26,16 +26,26 @@ import org.jiopi.framework.core.version.JIOPI;
  * 
  * 描绘可用的 自动化实例对象时 的实例类型
  * 
- * @since 2010.2.20
+ * @version 0.2 2010.5.6
+ * @since JIOPi0.2 2010.5.6
  *
  */
 @JIOPI
 public enum InstanceType {
 	
+	/**
+	 * 原形模式,每次使用时将生成一个新的实例
+	 */
 	PROTOTYPE,
 	
+	/**
+	 * 单例模式,在组件使用过程中只会生成一个类的实例
+	 */
 	SINGLETON,
 	
+	/**
+	 * 以配置文件为基准的单例模式,即在使用相同配置装配时,使用相同实例
+	 */
 	CONFIGURATION_SINGLETON
 	
 }

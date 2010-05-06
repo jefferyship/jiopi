@@ -30,7 +30,7 @@ import org.jiopi.framework.exception.CentralConsoleNotInitializedException;
  * JIOPi系统的总控操作台
  * 
  * 
- * @version 0.1 , 2010.2.20
+ * @version 0.2 , 2010.5.6
  * @since JIOPi0.1 , 2010.2.20
  *
  */
@@ -190,6 +190,13 @@ public class CentralConsole{
 		return cck.objectVariable(obj, variableName,returnType);
 	}
 	
+	/**
+	 * 
+	 * 设置新的classLoader以代替当前的ContextClassLoader
+	 * 
+	 * @param classLoader
+	 * @since JIOPi0.2
+	 */
 	public static void setRootClassLoader(ClassLoader classLoader){
 		if( cck == null){
 			throw new CentralConsoleNotInitializedException();
