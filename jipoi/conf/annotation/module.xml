@@ -3,7 +3,10 @@
   <hotswap>
     <class reset-method="reset">org.example.module.hotswap.**</class>
   </hotswap>
-  <controlpanel class="org.example.module.ModuleA" register-controlpanel="true">
+  <controlpanel class="org.example.module.ModuleA" register-module="true">
+    <register-controlpanels>
+      <class>org.example.blueprint.BlueprintA</class>
+    </register-controlpanels>
     <instantiation>
       <instancetype>SINGLETON</instancetype>
       <factory-method>factorymethod</factory-method>
@@ -16,7 +19,7 @@
     <socket-controlpanel controlpanel="" id="" module="" version="" configuration="">socketcontrolpanel</socket-controlpanel>
   </controlpanel>
   
-  <controlpanel class="org.example.module.ModuleB" register-controlpanel="true">
+  <controlpanel class="org.example.module.ModuleB" register-module="true">
     <instantiation>
       <instancetype>SINGLETON</instancetype>
       <factory-method>factorymethod</factory-method>

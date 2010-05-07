@@ -4,6 +4,11 @@
 	<xs:element name="resourcepools">
 		<xs:complexType>
 			<xs:sequence>
+			    <xs:element name="blueprints" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:attribute name="url-format" type="xmlfileType" use="required" />
+					</xs:complexType>
+				</xs:element>
 				<xs:element name="modules" minOccurs="0" maxOccurs="1">
 					<xs:complexType>
 						<xs:attribute name="url-format" type="xmlfileType" use="required" />
