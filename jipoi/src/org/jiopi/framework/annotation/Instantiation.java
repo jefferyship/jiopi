@@ -59,6 +59,8 @@ public @interface Instantiation {
 	
 	/**
 	 * 定义工厂方法,如果定义了工厂方法,则将使用工厂方法,而忽略构造函数
+	 * 
+	 * 工厂方法必须是 public static 类型的
 	 * @since JIOPi0.2 2010.5.6
 	 */
 	String factoryMethod() default "";

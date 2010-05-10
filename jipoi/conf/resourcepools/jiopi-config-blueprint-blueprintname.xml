@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint name="blueprintname" base-url="http://www.example.org/modulename/" reference="jiopi-config-module-modulename.xml" xmlns="http://www.jiopi.org/2010/JIOPISchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.jiopi.org/2010/JIOPISchema xsd/jiopi-config-blueprint.xsd ">
+      <release version="0.2" base-url="0.2/">
+          <resource update-time="2010-03-20T00:00:00">/lib.jar</resource>
+          <resource>/lib1.jar</resource>
+          <resource>file:///c:/libroot/*/lib/*.jar</resource>
+          <resource>file:///c:/libroot/**/commonlib/common-*.jar</resource>
+      </release>
+      <release version="0.1" reference="jiopi-config-blueprint-blueprintname-0.1.xml"/>
+</blueprint>

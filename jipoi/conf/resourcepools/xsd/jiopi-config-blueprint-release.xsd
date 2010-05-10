@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns="http://www.jiopi.org/2010/JIOPISchema" xmlns:jiopi="http://www.jiopi.org/2010/JIOPISchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://www.jiopi.org/2010/JIOPISchema">
     <xs:include schemaLocation="jiopi-config-common-type.xsd"/>
-    <xs:element name="release" type="moduleReleaseType">
+    <xs:element name="release" type="blueprintReleaseType">
         <xs:unique name="jarUnique">
 			<xs:selector xpath="jiopi:resource" />
 			<xs:field xpath="." />
