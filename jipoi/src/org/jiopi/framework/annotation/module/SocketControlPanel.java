@@ -18,26 +18,37 @@
  * under the License.
  * 
  */
-package org.jiopi.framework.annotation;
+package org.jiopi.framework.annotation.module;
 
 import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 import org.jiopi.framework.core.version.JIOPI;
 
 /**
  * 
- * 模块插入接口槽，用于描述一个 允许其他模块 接入 当前模块 的 连接方法,
- * 从而可以直接连接两个对象
+ * 一个模块对其他模块的依赖注入
+ * 与SocketModule不同的是,SocketControlPanel使用ControlPanel对象进行注入访问,而非接口访问
  * 
- * @since 2010.3.5
+ * @since 2010.2.20
  *
  */
-@Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.TYPE,ElementType.METHOD})
+@Target(ElementType.FIELD)
 @JIOPI
-public @interface Socket {
+public @interface SocketControlPanel {
+	
+
+	String id() default "";
+	
+
+	String module() default  "";
+	
+
+	String version() default  "";
+	
+
+	String controlpanel();
+	
+	String configuration() default "";
 	
 }

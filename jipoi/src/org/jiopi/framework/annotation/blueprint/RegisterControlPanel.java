@@ -18,11 +18,9 @@
  * under the License.
  * 
  */
-package org.jiopi.framework.annotation;
+package org.jiopi.framework.annotation.blueprint;
 
 import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 import org.jiopi.framework.core.version.JIOPI;
@@ -43,7 +41,6 @@ import org.jiopi.framework.core.version.JIOPI;
  * @since JIOPi0.2 2010.5.6
  *
  */
-@Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE,ElementType.METHOD,ElementType.FIELD})
 @JIOPI
 public @interface RegisterControlPanel {

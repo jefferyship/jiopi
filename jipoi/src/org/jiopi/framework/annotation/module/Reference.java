@@ -18,32 +18,28 @@
  * under the License.
  * 
  */
-package org.jiopi.framework.annotation;
+package org.jiopi.framework.annotation.module;
 
 import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+
 import org.jiopi.framework.core.version.JIOPI;
 
 /**
  * 
- * 一个模块对其他模块的依赖注入
+ * 定义远程方法的参数传递方式为引用传递
  * 
- * @since 2010.2.20
+ * 
+ * <p>
+ * 该标注必须注释在实现类的函数表上
+ * </p>
+ * 
+ * @version 0.x
+ * @since JIOPi0.x 
  *
  */
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.FIELD)
+@Target({ElementType.PARAMETER})
 @JIOPI
-public @interface SocketModule {
-	
-	String id() default "";
-	
-	String module() default "";
-	
-	String version() default  "";
-	
-	String configuration() default "";
+public @interface Reference {
 
 }

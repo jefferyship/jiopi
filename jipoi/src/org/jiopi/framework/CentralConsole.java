@@ -53,7 +53,8 @@ public class CentralConsole{
 	 * @since JIOPi0.1
 	 */
 	public static ModuleConsole accessModuleConsole(String moduleName) {
-		return accessModuleConsole(moduleName,null);
+		if( cck == null) throw new CentralConsoleNotInitializedException();
+		return cck.accessModuleConsole(moduleName,null);
 	}
 	
 	/**
@@ -66,9 +67,7 @@ public class CentralConsole{
 	 * @since JIOPi0.1
 	 */
 	public static ModuleConsole accessModuleConsole(String moduleName,String compatibleVersion) {
-		if( cck == null){
-			throw new CentralConsoleNotInitializedException();
-		}
+		if( cck == null) throw new CentralConsoleNotInitializedException();
 		return cck.accessModuleConsole(moduleName,compatibleVersion); 
 	}
 	
@@ -86,7 +85,8 @@ public class CentralConsole{
 	 * @since JIOPi0.1
 	 */
 	public static <T> T accessControlPanel(String moduleName,String compatibleVersion,String registerName,Class<T> returnType,Object... args){
-		return accessModuleConsole(moduleName,compatibleVersion).accessControlPanel(registerName, returnType, args);
+		if( cck == null) throw new CentralConsoleNotInitializedException();
+		return cck.accessModuleConsole(moduleName,compatibleVersion).accessControlPanel(registerName, returnType, args);
 	}
 	
 	/**
@@ -103,7 +103,8 @@ public class CentralConsole{
 	 * @since JIOPi0.1
 	 */
 	public static <T> T accessControlPanelStrict(String moduleName,String compatibleVersion,String registerName,Class<T> returnType,Object[] parameterTypes,Object... args){
-		return accessModuleConsole(moduleName,compatibleVersion).accessControlPanelStrict(registerName, returnType,parameterTypes ,args);
+		if( cck == null) throw new CentralConsoleNotInitializedException();
+		return cck.accessModuleConsole(moduleName,compatibleVersion).accessControlPanelStrict(registerName, returnType,parameterTypes ,args);
 	}
 	
 	/**
@@ -117,7 +118,8 @@ public class CentralConsole{
 	 * @since JIOPi0.1
 	 */
 	public <T> T operate(String moduleName,String compatibleVersion,String registerName,Class<T> returnType,Object... args){
-		return accessModuleConsole(moduleName,compatibleVersion).operate(registerName, returnType, args);
+		if( cck == null) throw new CentralConsoleNotInitializedException();
+		return cck.accessModuleConsole(moduleName,compatibleVersion).operate(registerName, returnType, args);
 	}
 	
 	/**
@@ -132,7 +134,8 @@ public class CentralConsole{
 	 * @since JIOPi0.1
 	 */
 	public <T> T operateStrict(String moduleName,String compatibleVersion,String registerName,Class<T> returnType,Object[] parameterTypes,Object... args){
-		return accessModuleConsole(moduleName,compatibleVersion).operateStrict(registerName, returnType, parameterTypes, args);
+		if( cck == null) throw new CentralConsoleNotInitializedException();
+		return cck.accessModuleConsole(moduleName,compatibleVersion).operateStrict(registerName, returnType, parameterTypes, args);
 	}
 	
 	
@@ -148,9 +151,7 @@ public class CentralConsole{
 	 * @since JIOPi0.1
 	 */
 	public static <T> T objectOperate(Object obj,String registerName,Class<T> returnType,Object... args){
-		if( cck == null){
-			throw new CentralConsoleNotInitializedException();
-		}
+		if( cck == null) throw new CentralConsoleNotInitializedException();
 		return cck.objectOperate(obj, registerName,returnType, args);
 	}
 	
@@ -168,9 +169,7 @@ public class CentralConsole{
 	 * @since JIOPi0.1
 	 */
 	public <T> T objectOperateStrict(Object obj,String registerName,Class<T> returnType,Object[] parameterTypes,Object... args){
-		if( cck == null){
-			throw new CentralConsoleNotInitializedException();
-		}
+		if( cck == null) throw new CentralConsoleNotInitializedException();
 		return cck.objectOperateStrict(obj, registerName, returnType, parameterTypes, args);
 	}
 	
@@ -184,9 +183,7 @@ public class CentralConsole{
 	 * @since JIOPi0.1
 	 */
 	public static <T> T objectVariable(Object obj,String variableName,Class<T> returnType){
-		if( cck == null){
-			throw new CentralConsoleNotInitializedException();
-		}
+		if( cck == null) throw new CentralConsoleNotInitializedException();
 		return cck.objectVariable(obj, variableName,returnType);
 	}
 	
@@ -198,16 +195,12 @@ public class CentralConsole{
 	 * @since JIOPi0.2
 	 */
 	public static void setRootClassLoader(ClassLoader classLoader){
-		if( cck == null){
-			throw new CentralConsoleNotInitializedException();
-		}
+		if( cck == null) throw new CentralConsoleNotInitializedException();
 		cck.setRootClassLoader(classLoader);
 	}
 	
 	public static ClassLoader getClassLoader(){
-		if( cck == null){
-			throw new CentralConsoleNotInitializedException();
-		}
+		if( cck == null) throw new CentralConsoleNotInitializedException();
 		return cck.getClassLoader();
 	}
 	
@@ -220,30 +213,22 @@ public class CentralConsole{
 	}
 
 	public static void refreshResource(String modulename,String version){
-		if( cck == null){
-			throw new CentralConsoleNotInitializedException();
-		}
+		if( cck == null) throw new CentralConsoleNotInitializedException();
 		cck.refreshResource(modulename, version);
 	}
 	
 	public static void start(){
-		if( cck == null){
-			throw new CentralConsoleNotInitializedException();
-		}
+		if( cck == null) throw new CentralConsoleNotInitializedException();
 		cck.start();
 	}
 	
 	public static void restart(){
-		if( cck == null){
-			throw new CentralConsoleNotInitializedException();
-		}
+		if( cck == null) throw new CentralConsoleNotInitializedException();
 		cck.restart();
 	}
 	
 	public static void shutdown() {
-		if( cck == null){
-			throw new CentralConsoleNotInitializedException();
-		}
+		if( cck == null) throw new CentralConsoleNotInitializedException();
 		cck.shutdown();
 	}
 	

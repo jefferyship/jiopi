@@ -18,25 +18,21 @@
  * under the License.
  * 
  */
-package org.jiopi.framework.core.version;
+package org.jiopi.framework.annotation.module;
 
 import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-import org.jiopi.framework.annotation.blueprint.Blueprint;
+
+import org.jiopi.framework.core.version.JIOPI;
 
 /**
+ * 指定类支持Hotswap
  * 
- * JIOPI 版本定义
- * 
- * @version 0.2 2010.5.6
- * @since JIOPi0.1 2010.4.8
+ * @since 2010.3.31
  *
  */
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.TYPE)
-@Blueprint(name="jiopi", version="0.2", versionInterface=JIOPI.class)
-public @interface JIOPI {
-
+@Target({ElementType.TYPE})
+@JIOPI
+public @interface Hotswap {
+	String resetMethod() default "";
 }

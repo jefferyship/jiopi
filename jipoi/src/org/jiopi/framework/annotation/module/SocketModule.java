@@ -18,34 +18,29 @@
  * under the License.
  * 
  */
-package org.jiopi.framework.annotation;
+package org.jiopi.framework.annotation.module;
 
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
 import org.jiopi.framework.core.version.JIOPI;
 
 /**
  * 
- * 描绘可用的 自动化实例对象时 的实例类型
+ * 一个模块对其他模块的依赖注入
  * 
- * @version 0.2 2010.5.6
- * @since JIOPi0.2 2010.5.6
+ * @since 2010.2.20
  *
  */
+@Target(ElementType.FIELD)
 @JIOPI
-public enum InstanceType {
+public @interface SocketModule {
 	
-	/**
-	 * 原形模式,每次使用时将生成一个新的实例
-	 */
-	PROTOTYPE,
+	String id() default "";
 	
-	/**
-	 * 单例模式,在组件使用过程中只会生成一个类的实例
-	 */
-	SINGLETON,
+	String module() default "";
 	
-	/**
-	 * 以配置文件为基准的单例模式,即在使用相同配置装配时,使用相同实例
-	 */
-	CONFIGURATION_SINGLETON
+	String version() default  "";
 	
+	String configuration() default "";
+
 }

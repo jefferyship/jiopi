@@ -18,24 +18,34 @@
  * under the License.
  * 
  */
-package org.jiopi.framework.annotation;
-
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+package org.jiopi.framework.annotation.module;
 
 import org.jiopi.framework.core.version.JIOPI;
 
 /**
- * 指定类支持Hotswap
  * 
- * @since 2010.3.31
+ * 描绘可用的 自动化实例对象时 的实例类型
+ * 
+ * @version 0.2 2010.5.6
+ * @since JIOPi0.2 2010.5.6
  *
  */
-@Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.TYPE})
 @JIOPI
-public @interface Hotswap {
-	String resetMethod() default "";
+public enum InstanceType {
+	
+	/**
+	 * 原形模式,每次使用时将生成一个新的实例
+	 */
+	PROTOTYPE,
+	
+	/**
+	 * 单例模式,在组件使用过程中只会生成一个类的实例
+	 */
+	SINGLETON,
+	
+	/**
+	 * 以配置文件为基准的单例模式,即在使用相同配置装配时,使用相同实例
+	 */
+	CONFIGURATION_SINGLETON
+	
 }

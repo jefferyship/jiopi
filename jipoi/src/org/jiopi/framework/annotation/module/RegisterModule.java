@@ -18,48 +18,27 @@
  * under the License.
  * 
  */
-package org.jiopi.framework.annotation;
+package org.jiopi.framework.annotation.module;
 
 import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 import org.jiopi.framework.core.version.JIOPI;
 
 /**
- * 蓝图注释
  * 
- * 用于标明一个接口类所属的 蓝图 名称 和 版本
+ * 将 实现类 与 蓝图的 控制面板 绑定
  * 
- * 蓝图 应当定义一个统一版本注解 ，并用该注解 对 版本注解进行注解，从而将一个蓝图的版本说明放置于同一个地方
+ * <p>
+ * 默认为和所有实现的 ControlPanel进行绑定注册
+ * </p>
  * 
- * @version 0.2 2010.5.6
- * @since JIOPi0.2 2010.5.6
+ * @version 0.2 2010.5.7
+ * @since JIOPi0.2 2010.5.7
  *
  */
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.TYPE)
+@Target({ElementType.TYPE})
 @JIOPI
-public @interface Blueprint {
-	
-	/**
-	 * 蓝图名称
-	 * 
-	 * @since JIOPi0.2
-	 */
-	String name();
-	
-	/**
-	 * 蓝图版本
-	 * @since JIOPi0.2
-	 */
-	String version();
-	
-	/**
-	 * 蓝图的版本定义接口,一个蓝图的任何一个版本都应当包含相同的一个版本定义接口
-	 * @since JIOPi0.2
-	 */
-	Class<?> versionInterface();
-	
+public @interface RegisterModule {
+	String[] value() default {};
 }

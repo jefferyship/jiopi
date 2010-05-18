@@ -28,32 +28,39 @@ import org.jiopi.framework.exception.CentralConsoleInitializeException;
 
 /**
  * 
- * 核心程序装载工厂
+ * kernel loader factory
  * 
- * @version 0.1 2010.2.21
+ * 0.2:return CentralConsoleKernel with singleton mod 
+ * 
+ * @version 0.2 2010.5.10
  * @since JIOPi0.1 2010.2.21
  *
  */
 @JIOPI
 public class CentralConsoleKernelLoaderFactory {
 	
+	private static CentralConsoleKernel cck = null;
+	
 	/**
 	 * 
 	 * @return
 	 * @since JIOPi0.1
 	 */
-	public static CentralConsoleKernel loadCentralConsoleKernel() {
-		String loaderClass = Config.getConfig( JiopiConfigConstants.KERNEL_LOADER_CLASS );
-		if( loaderClass==null ) {
-			throw new CentralConsoleInitializeException( "cannot find loader class by key:" + JiopiConfigConstants.KERNEL_LOADER_CLASS );
+	public static synchronized CentralConsoleKernel loadCentralConsoleKernel() {
+		if(cck == null){
+			String loaderClass = Config.getConfig( JiopiConfigConstants.KERNEL_LOADER_CLASS );
+			if( loaderClass==null ) {
+				throw new CentralConsoleInitializeException( "cannot find loader class by key:" + JiopiConfigConstants.KERNEL_LOADER_CLASS );
+			}
+			try {
+				Class<?> c = Class.forName( loaderClass );
+				CentralConsoleKernelLoader loader = (CentralConsoleKernelLoader)c.newInstance();
+				cck =  loader.loadCentralConsoleKernel();
+			} catch (Exception e) {
+				throw new CentralConsoleInitializeException( e );
+			}
 		}
-		try {
-			Class<?> c = Class.forName( loaderClass );
-			CentralConsoleKernelLoader loader = (CentralConsoleKernelLoader)c.newInstance();
-			return loader.loadCentralConsoleKernel();
-		} catch (Exception e) {
-			throw new CentralConsoleInitializeException( e );
-		}
+		return cck;
 	}
 	
 }
