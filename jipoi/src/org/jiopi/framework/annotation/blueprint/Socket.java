@@ -22,7 +22,6 @@ package org.jiopi.framework.annotation.blueprint;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Target;
-
 import org.jiopi.framework.core.version.JIOPI;
 
 /**
@@ -30,7 +29,8 @@ import org.jiopi.framework.core.version.JIOPI;
  * 模块插入接口槽，用于描述一个 允许其他模块 接入 当前模块 的 连接方法,
  * 从而可以直接连接两个对象
  * 
- * @since 2010.3.5
+ * @version 0.3 2010.5.20
+ * @since JIOPi0.3 2010.5.20
  *
  */
 @Target({ElementType.METHOD})

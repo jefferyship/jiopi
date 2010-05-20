@@ -27,10 +27,11 @@ import org.jiopi.framework.core.version.JIOPI;
 
 /**
  * 
- * 一个模块对其他模块的依赖注入
+ * 通过ControlPanel注入一个模块的控制面板
  * 与SocketModule不同的是,SocketControlPanel使用ControlPanel对象进行注入访问,而非接口访问
  * 
- * @since 2010.2.20
+ * @version 0.3 2010.5.20
+ * @since JIOPi0.3 2010.5.20
  *
  */
 @Target(ElementType.FIELD)

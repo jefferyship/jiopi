@@ -36,7 +36,7 @@ import org.jiopi.framework.annotation.blueprint.Blueprint;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-@Blueprint(name="jiopi", version="0.2", versionInterface=JIOPI.class)
+@Blueprint(name="jiopi", version="0.3", versionInterface=JIOPI.class)
 public @interface JIOPI {
 
 }

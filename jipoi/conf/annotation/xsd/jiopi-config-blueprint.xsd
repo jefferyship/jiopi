@@ -4,6 +4,17 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="version-interface" type="xs:string"/>
+                <xs:element name="exports">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="export" minOccurs="1" maxOccurs="unbounded" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                    <xs:unique name="exportUnique">
+                        <xs:selector xpath="jiopi:export"/>
+                        <xs:field xpath="." />
+                    </xs:unique>
+                </xs:element>
                 <xs:element name="interface" minOccurs="0" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>

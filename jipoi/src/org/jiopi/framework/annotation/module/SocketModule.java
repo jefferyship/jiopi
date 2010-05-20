@@ -26,9 +26,10 @@ import org.jiopi.framework.core.version.JIOPI;
 
 /**
  * 
- * 一个模块对其他模块的依赖注入
+ * 通过接口注入一个模块的控制面板
  * 
- * @since 2010.2.20
+ * @version 0.3 2010.5.20
+ * @since JIOPi0.3 2010.5.20
  *
  */
 @Target(ElementType.FIELD)
