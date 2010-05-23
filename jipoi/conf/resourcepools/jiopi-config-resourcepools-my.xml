@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<resourcepools xmlns="http://www.jiopi.org/2010/JIOPISchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.jiopi.org/2010/JIOPISchema xsd/jiopi-config-resourcepools.xsd ">
+<resourcepools xmlns="http://www.jiopi.org/2010/JIOPISchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.jiopi.org/2010/JIOPISchema http://www.jiopi.org/2010/JIOPISchema/resourcepools/jiopi-config-resourcepools.xsd ">
   <blueprints url-format="http://www.example.org/libroot/jiopi-config-blueprint-${blueprint}.xml"/>
   <modules url-format="http://www.example.org/libroot/jiopi-config-module-${module}.xml"/>
   <commonlib group="main" base-url="http://www.example.org/commonlib/">
