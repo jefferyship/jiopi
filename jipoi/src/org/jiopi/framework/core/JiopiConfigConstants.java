@@ -40,6 +40,12 @@ public class JiopiConfigConstants {
 	public static final String CONFIG_FILE = "jiopi.properties";
 	
 	/**
+	 * Assembling configuration file name
+	 * @since JIOPi0.3
+	 */
+	public static final String ASSEMBLING_FILE = "jiopi-config.xml";
+	
+	/**
 	 * 配置框架初始化实现类的 属性名
 	 * @since JIOPi0.1
 	 */
