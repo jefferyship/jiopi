@@ -68,17 +68,22 @@ public class JiopiConfigConstants {
 	 */
 	public static final String HOTSWAP_DEFAULT="false";
 	
-	
-	public static final String CASCADING_START = "jiopi.resourcepools.cascading-start";
-	public static final String CASCADING_START_DEFAULT="this";
-	
+	/**
+	 * 
+	 * resource pool configuration
+	 * 
+	 * @since JIOPi0.2
+	 */
 	public static final String RESOURCEPOOL_PREFIX = "jiopi.resourcepool.";
-	
 	public static final String RESOURCEPOOL_PATH="path";
-	
 	public static final String RESOURCEPOOL_PRI="pri";
 	public static final String RESOURCEPOOL_PRI_DEFAULT="-1";
 	
+	
+	
+	
+	public static final String CASCADING_START = "jiopi.resourcepools.cascading-start";
+	public static final String CASCADING_START_DEFAULT="this";
 	public static final String RESOURCEPOOL_HOTSWAP = "hotswap";
 	public static final String RESOURCEPOOL_HOTSWAP_DEFAULT = "false";
 }
