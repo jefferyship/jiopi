@@ -32,7 +32,6 @@ import org.jiopi.framework.core.version.JIOPI;
 @JIOPI
 public class EmptyInitializer implements Initializer {
 
-	@Override
 	public void initialize() {}
 
 }
