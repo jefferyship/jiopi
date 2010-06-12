@@ -117,7 +117,7 @@ public class CentralConsole{
 	 * @return
 	 * @since JIOPi0.1
 	 */
-	public <T> T operate(String moduleName,String compatibleVersion,String registerName,Class<T> returnType,Object... args){
+	public static <T> T operate(String moduleName,String compatibleVersion,String registerName,Class<T> returnType,Object... args){
 		if( cck == null) throw new CentralConsoleNotInitializedException();
 		return cck.accessModuleConsole(moduleName,compatibleVersion).operate(registerName, returnType, args);
 	}
@@ -133,7 +133,7 @@ public class CentralConsole{
 	 * @return
 	 * @since JIOPi0.1
 	 */
-	public <T> T operateStrict(String moduleName,String compatibleVersion,String registerName,Class<T> returnType,Object[] parameterTypes,Object... args){
+	public static <T> T operateStrict(String moduleName,String compatibleVersion,String registerName,Class<T> returnType,Object[] parameterTypes,Object... args){
 		if( cck == null) throw new CentralConsoleNotInitializedException();
 		return cck.accessModuleConsole(moduleName,compatibleVersion).operateStrict(registerName, returnType, parameterTypes, args);
 	}
@@ -168,7 +168,7 @@ public class CentralConsole{
 	 * @return
 	 * @since JIOPi0.1
 	 */
-	public <T> T objectOperateStrict(Object obj,String registerName,Class<T> returnType,Object[] parameterTypes,Object... args){
+	public static <T> T objectOperateStrict(Object obj,String registerName,Class<T> returnType,Object[] parameterTypes,Object... args){
 		if( cck == null) throw new CentralConsoleNotInitializedException();
 		return cck.objectOperateStrict(obj, registerName, returnType, parameterTypes, args);
 	}

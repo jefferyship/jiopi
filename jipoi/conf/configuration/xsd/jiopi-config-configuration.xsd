@@ -7,13 +7,10 @@
 			<xs:sequence minOccurs="0" maxOccurs="unbounded">
 			    <xs:element name="redefine" minOccurs="0" maxOccurs="unbounded">
 			        <xs:complexType>
-			            <xs:simpleContent>
-			                <xs:extension base="xs:string">
-			                    <xs:attribute name="module" type="xs:string" use="required" />
-			                    <xs:attribute name="version" type="compatibleVersion" use="optional" />
-			                    <xs:attribute name="controlpanel" type="xs:string" use="required" />
-			                </xs:extension>
-			            </xs:simpleContent>
+			            <xs:attribute name="class" type="xs:string" use="required" />
+			            <xs:attribute name="module" type="xs:string" use="required" />
+			            <xs:attribute name="version" type="compatibleVersion" use="optional" />
+			            <xs:attribute name="controlpanel" type="xs:string" use="required" />
 			        </xs:complexType>
 			    </xs:element>
 				<xs:element name="module" minOccurs="0" maxOccurs="unbounded">
