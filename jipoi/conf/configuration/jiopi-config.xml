@@ -25,7 +25,7 @@
       </socket>
     </controlpanel>
   </module>
-  <redefine class="className" module="moduleName" version="1.10.0" controlpanel=""/>
+  <redefine class="className" module="moduleName" version="1.10.0" controlpanel="" configuration="ID"/>
   <hosts>
     <host name="hostname" module="remoteCallModule"/>
   </hosts>
