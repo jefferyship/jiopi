@@ -51,7 +51,7 @@ public interface RemoteJIOPi {
      * @param <T>                  return type
      * @return                     method's return
      */
-    public <T> T JIOPiOperateStrict(String moduleName,String compatibleVersion,String registerName,Object self,boolean transportSelf,boolean receiveSelf,Class<T> returnType,Class[] parameterTypes,Object... args);
+    public <T> T JIOPiOperateStrict(String moduleName,String compatibleVersion,String registerName,Object self,boolean transportSelf,boolean receiveSelf,Class<T> returnType,Class<?>[] parameterTypes,Object... args);
 
 
     /**
@@ -65,7 +65,7 @@ public interface RemoteJIOPi {
      * @param <T>
      * @return
      */
-    public <T> T operateStrict(long objectID,String methodName,Class<T> returnType,Class[] parameterTypes,Object... args);
+    public <T> T operateStrict(long objectID,String methodName,Class<T> returnType,Class<?>[] parameterTypes,Object... args);
 
 
 }
