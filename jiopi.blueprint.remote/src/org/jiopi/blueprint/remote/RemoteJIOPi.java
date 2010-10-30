@@ -21,6 +21,7 @@
 package org.jiopi.blueprint.remote;
 
 import org.jiopi.framework.core.version.JIOPI;
+import org.jiopi.framework.annotation.blueprint.RegisterControlPanel;
 
 /**
  * The interface to call a method which is running in a remote JIOPi container.
@@ -32,6 +33,7 @@ import org.jiopi.framework.core.version.JIOPI;
  * @since JIOPi0.5 , 2010.10.24
  */
 @JIOPI
+@RegisterControlPanel("jiopi.RemoteJIOPi")
 public interface RemoteJIOPi {
 
     /**
