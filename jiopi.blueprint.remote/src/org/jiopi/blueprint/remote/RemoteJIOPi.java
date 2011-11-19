@@ -20,7 +20,6 @@
  */
 package org.jiopi.blueprint.remote;
 
-import org.jiopi.framework.core.version.JIOPI;
 import org.jiopi.framework.annotation.blueprint.RegisterControlPanel;
 
 /**
@@ -32,42 +31,65 @@ import org.jiopi.framework.annotation.blueprint.RegisterControlPanel;
  * @version 0.5 ,2010.10.24
  * @since JIOPi0.5 , 2010.10.24
  */
-@JIOPI
+@Version
 @RegisterControlPanel("jiopi.RemoteJIOPi")
 public interface RemoteJIOPi {
 
+
     /**
-     * Call a remote method by JIOPi style
      *
-     * If the parameter self is not null,it means that this remote call will synchronize it self
-     *
-     * @param moduleName           the module name
-     * @param compatibleVersion    the compatible version
-     * @param registerName         the register name of Caller class
-     * @param self                 the caller it self at client side
-     * @param transportSelf        transport caller if self is not null
-     * @param receiveSelf          receive caller from remote if self if not null
-     * @param returnType           return type of the method
-     * @param args                 method args
-     * @param parameterTypes
-     * @param <T>                  return type
-     * @return                     method's return
+     * @param moduleName
+     * @param compatibleVersion
+     * @param registerName
+     * @param args
+     * @return
      */
-    public <T> T JIOPiOperateStrict(String moduleName,String compatibleVersion,String registerName,Object self,boolean transportSelf,boolean receiveSelf,Class<T> returnType,Class<?>[] parameterTypes,Object... args);
+    public RemoteReference accessRemoteControlPanel(String moduleName,String compatibleVersion,String registerName,Object... args);
+
+    /**
+     *
+     * @param moduleName
+     * @param compatibleVersion
+     * @param registerName
+     * @param parameterTypes
+     * @param args
+     * @return
+     */
+    public RemoteReference accessRemoteControlPanelStrict(String moduleName,String compatibleVersion,String registerName,Class<?>[] parameterTypes,Object... args);
+
+    /**
+     * Call a remote method when the reference object is partly remotely
+     *
+     * @param moduleName
+     * @param compatibleVersion
+     * @param className
+     * @param objectID
+     * @param methodName
+     * @param self
+     * @param transportSelf
+     * @param receiveSelf
+     * @param parameterTypes
+     * @param args
+     * @return
+     */
+    public Object operateJIOPiRemoteStrict(String moduleName,String compatibleVersion,String className,long objectID,String methodName,Object self,boolean transportSelf,boolean receiveSelf,Class<?>[] parameterTypes,Object... args);
 
 
     /**
      * Call a remote object's method by objectID
      *
-     * @param objectID
-     * @param methodName
-     * @param returnType
-     * @param parameterTypes
-     * @param args
-     * @param <T>
-     * @return
+     * The self transporting depends on the call's JIOPi container
+     *
+     * @param objectID         objectID
+     * @param methodName       methodName
+     * @param self             the caller itself
+     * @param transportSelf    transportSelf
+     * @param receiveSelf      receiveSelf
+     * @param parameterTypes   parameterTypes
+     * @param args             args
+     * @return                 method's return
      */
-    public <T> T operateStrict(long objectID,String methodName,Class<T> returnType,Class<?>[] parameterTypes,Object... args);
+    public Object operateRemoteStrict(long objectID,String methodName,Object self,boolean transportSelf,boolean receiveSelf,Class<?>[] parameterTypes,Object... args);
 
-
+    
 }
