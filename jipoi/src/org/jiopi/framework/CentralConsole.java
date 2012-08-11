@@ -29,8 +29,12 @@ import org.jiopi.framework.exception.CentralConsoleNotInitializedException;
  * 
  * JIOPi系统的总控操作台
  * 
+ * moduleName specifies:
  * 
- * @version 0.2 , 2010.5.6
+ * ModuleName : means a local module,and the JIOPi container will search from repositories using the given name 
+ * remote://remote_call_module_name@host:port/?jid=JIOPiContainerID : means a remote module
+ * 
+ * @version 0.5 , 2012.8.11
  * @since JIOPi0.1 , 2010.2.20
  *
  */
