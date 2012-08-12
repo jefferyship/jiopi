@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<!--
+==============================================================================
+
+Usage:
+
+  ant build.xml 重新编译并发布整个项目
+
+==============================================================================
+-->
+
+<project name="example.blueprint.helloworld" default="jar" basedir=".">
+    <!-- set global properties for this build -->
+	<property name="commonlib.dir"        value="../../../CommonLibs"/>
+    <property name="src.dir"        value="src"/> <!-- dir of source files -->
+    <property name="build.dir"      value="classes"/><!-- temp dir of build files -->
+    <property name="lib.dir"        value="lib"/><!-- dir of lib files-->
+    <property name="name"       value="example.blueprint.helloworld"/>
+    <property name="type"        value="blueprint"/>
+	<property name="release.dir"        value="releases"/>
+    <property name="version"    value="0.1"/>
+
+    <path id="project.lib">
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+	
+	<path id="commonlib.jiopi.path">
+	    <fileset dir="${commonlib.dir}/JIOPi">
+	        <include name="**/*.jar"/>
+	    </fileset>
+	</path>
+	
+	<target name="clean">
+		<delete dir="${version}"/>
+		<delete file="${release.dir}/${type}-${name}-${version}.jar"/>
+	</target>
+	
+    <target name="build" depends="clean">
+    	<mkdir dir="${version}/${build.dir}"/>
+    	<javac srcdir="${src.dir}" destdir="${version}/${build.dir}" includes="**/*.java" target="1.6" includeantruntime="on"> 
+    		 <classpath refid="commonlib.jiopi.path"/>
+    	</javac>
+    	<copy todir="${version}/${build.dir}">
+    	   <fileset dir="${src.dir}" includes="*.jiopi"/>
+    	</copy>
+    </target>
+
+    <target name="jar" depends="build">
+    	<mkdir dir="${release.dir}"/>
+        <jar jarfile="${release.dir}/${type}-${name}-${version}.jar" basedir="${version}/${build.dir}"/>
+    </target>
+</project>

@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<!--
+==============================================================================
+
+Usage:
+
+  ant build.xml 重新编译并发布整个项目
+
+==============================================================================
+-->
+
+<project name="example.module.helloworld" default="jar" basedir=".">
+    <!-- set global properties for this build -->
+	<property name="commonlib.dir"        value="../../../CommonLibs"/>
+    <property name="src.dir"        value="src"/>
+	<property name="conf.dir"        value="conf"/>
+    <property name="build.dir"      value="classes"/>
+    <property name="lib.dir"        value="lib"/>
+    <property name="name"       value="example.module.helloworld"/>
+    <property name="type"        value="module"/>
+	<property name="release.dir"        value="releases"/>
+    <property name="version"    value="0.1.0.1"/>
+
+    <path id="project.lib">
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+	
+	<path id="commonlib.jiopi.path">
+	    <fileset dir="${commonlib.dir}/JIOPi">
+	        <include name="**/*.jar"/>
+	    </fileset>
+	</path>
+	
+	<path id="commonlib.log4j.path">
+		    <fileset dir="${commonlib.dir}/Log4J">
+		        <include name="**/*.jar"/>
+		    </fileset>
+	</path>
+	
+	<target name="clean">
+		<delete dir="${version}"/>
+		<delete file="${release.dir}/${type}-${name}-${version}.jar"/>
+	</target>
+	
+    <target name="build" depends="clean">
+    	<mkdir dir="${version}/${build.dir}"/>
+    	<!-- <mkdir dir="${version}/${conf.dir}"/> -->
+    	<mkdir dir="${version}/${lib.dir}"/>
+    	<javac srcdir="${src.dir}" destdir="${version}/${build.dir}" includes="**/*.java" target="1.6" includeantruntime="on"> 
+    		<classpath refid="commonlib.jiopi.path"/>
+    		<classpath refid="commonlib.log4j.path"/>
+    		<classpath refid="project.lib"/>
+    	</javac>
+    	<copy todir="${version}/${build.dir}">
+    	   <fileset dir="${src.dir}" includes="*.jiopi"/>
+    	</copy>
+    	
+    	<!-- 
+    	<copy todir="${version}/${conf.dir}">
+    	   <fileset dir="${conf.dir}"/>
+    	</copy>
+    	-->
+    	
+    	<copy todir="${version}/${lib.dir}">
+    	    <fileset dir="${lib.dir}"/>
+    	</copy>
+    </target>
+
+    <target name="jar" depends="build">
+    	<mkdir dir="${release.dir}"/>
+        <jar jarfile="${release.dir}/${type}-${name}-${version}.jar" basedir="${version}/${build.dir}"/>
+    </target>
+</project>
