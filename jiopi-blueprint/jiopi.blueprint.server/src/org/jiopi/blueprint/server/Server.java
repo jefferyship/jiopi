@@ -30,7 +30,7 @@ import org.jiopi.framework.annotation.blueprint.RegisterControlPanel;
  * @since 0.1 , 2010.11.1
  */
 @Version
-@RegisterControlPanel("jiopi.Server")
+@RegisterControlPanel("jiopi.blueprint.server")
 public interface Server {
 	
 	/**
