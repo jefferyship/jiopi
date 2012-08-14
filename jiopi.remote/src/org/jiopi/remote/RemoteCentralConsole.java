@@ -43,9 +43,24 @@ public interface RemoteCentralConsole {
 	 * @param compatibleVersion    version of the module
 	 * @param controlPanelName     name of the control panel
 	 * @param methodName           name of the method
+	 * @param returnType           type of return object
 	 * @param parameterTypes       type of the parameter
 	 * @param args                 arguments of this method call
 	 * @return
 	 */
-	public Object methodCallStrict(String containerID,String moduleName,String compatibleVersion,String controlPanelName,String methodName,Class<?>[] parameterTypes,Object... args);
+	public <T> T methodCallStrict(String containerID,String moduleName,String compatibleVersion,String controlPanelName,String methodName,Class<T> returnType,Class<?>[] parameterTypes,Object... args);
+	
+	/**
+	 * call the specified remote method by the given name and parameters
+	 * 
+	 * @param containerID
+	 * @param moduleName
+	 * @param compatibleVersion
+	 * @param controlPanelName
+	 * @param methodName
+	 * @param returnType
+	 * @param args
+	 * @return
+	 */
+	public <T> T methodCall(String containerID,String moduleName,String compatibleVersion,String controlPanelName,String methodName,Class<T> returnType,Object... args);
 }
