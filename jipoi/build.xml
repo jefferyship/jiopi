@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<!--
+==============================================================================
+
+Usage:
+
+  ant build.xml 重新编译并发布整个项目
+
+==============================================================================
+-->
+
+<project name="jiopi" default="jar" basedir=".">
+    <!-- set global properties for this build -->
+    <property name="src.dir"        value="src"/> <!-- dir of source files -->
+	<property name="build.dir"      value="classes"/>
+    <property name="name"       value="jiopi"/>
+	<property name="release.dir"        value="releases"/>
+    <property name="version"    value="0.5"/>
+	
+	<target name="clean">
+		<delete dir="${build.dir}"/>
+	</target>
+	
+    <target name="build" depends="clean">
+    	<mkdir dir="${build.dir}"/>
+    	<javac srcdir="${src.dir}" destdir="${build.dir}" includes="**/*.java" target="1.6" includeantruntime="on"> 
+    	</javac>
+    	<copy todir="${build.dir}">
+    	   <fileset dir="${src.dir}" includes="*.jiopi"/>
+    	</copy>
+    </target>
+
+    <target name="jar" depends="build">
+        <jar jarfile="${release.dir}/${name}-${version}.jar" basedir="${build.dir}"/>
+    </target>
+</project>
