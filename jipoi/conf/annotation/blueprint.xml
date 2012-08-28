@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<blueprint name="blueprintname" version="1.0" xmlns="http://www.jiopi.org/2010/JIOPISchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.jiopi.org/2010/JIOPISchema http://www.jiopi.org/2010/JIOPISchema/annotation/jiopi-config-blueprint.xsd ">
+<blueprint name="blueprintname" version="1.0" xmlns="http://www.jiopi.org/xsd/2012/JIOPISchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.jiopi.org/xsd/2012/JIOPISchema http://www.jiopi.org/xsd/2012/JIOPISchema/annotation/jiopi-config-blueprint.xsd ">
   <version-interface>org.example.blueprintname.versionInterface</version-interface>
   <exports>
     <export>org.example.blueprintname.*</export>
@@ -7,11 +7,14 @@
   </exports>
   <interface class="org.example.blueprintname.BlueprintA">
     <register-controlpanel>BlueprintA</register-controlpanel>
-    <register-method method="test">registermethod</register-method>
+    <register-method method="test">registermethod1</register-method>
     <register-variable variable="test2">registervar2</register-variable>
     <register-variable variable="test3">registervar2</register-variable>
     <register-method method="test2">registermethod2</register-method>
     <socket>socketMethod</socket>
     <socket>socketMethod2</socket>
   </interface>
+  <constructor class="org.example.blueprintname._BlueprintA">
+    <construct-controlpanel>BlueprintA</construct-controlpanel>
+  </constructor>
 </blueprint>

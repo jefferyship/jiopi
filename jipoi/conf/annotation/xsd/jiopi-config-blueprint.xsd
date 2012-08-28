@@ -56,6 +56,14 @@
                         <xs:field xpath="."/>
                     </xs:unique>
                 </xs:element>
+                <xs:element name="constructor" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+						    <xs:element name="construct-controlpanel" type="xs:string" minOccurs="1" maxOccurs="1"/>
+                        </xs:sequence>
+                        <xs:attribute name="class" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
             </xs:sequence>
             <xs:attribute name="name" type="modulenameType" use="required"/>
             <xs:attribute name="version" type="blueprintVersionType" use="required"/>
