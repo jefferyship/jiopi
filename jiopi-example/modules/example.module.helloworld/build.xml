@@ -47,7 +47,7 @@ Usage:
 	
     <target name="build" depends="clean">
     	<mkdir dir="${version}/${build.dir}"/>
-    	<!-- <mkdir dir="${version}/${conf.dir}"/> -->
+    	<mkdir dir="${version}/${conf.dir}"/>
     	<mkdir dir="${version}/${lib.dir}"/>
     	<javac srcdir="${src.dir}" destdir="${version}/${build.dir}" includes="**/*.java" target="1.6" includeantruntime="on"> 
     		<classpath refid="commonlib.jiopi.path"/>
@@ -57,12 +57,10 @@ Usage:
     	<copy todir="${version}/${build.dir}">
     	   <fileset dir="${src.dir}" includes="*.jiopi"/>
     	</copy>
-    	
-    	<!-- 
+ 
     	<copy todir="${version}/${conf.dir}">
     	   <fileset dir="${conf.dir}"/>
     	</copy>
-    	-->
     	
     	<copy todir="${version}/${lib.dir}">
     	    <fileset dir="${lib.dir}"/>
