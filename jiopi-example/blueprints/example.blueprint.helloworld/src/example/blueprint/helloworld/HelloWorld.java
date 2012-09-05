@@ -2,7 +2,6 @@ package example.blueprint.helloworld;
 
 import org.jiopi.framework.annotation.blueprint.RegisterControlPanel;
 
-
 @Version
 @RegisterControlPanel("example.helloworld")
 public interface HelloWorld {
@@ -11,7 +10,7 @@ public interface HelloWorld {
 	/**
 	 * The first hello world function
 	 * 
-	 * it should print "Hello World" in the console.
+	 * We want the computer give us a response when this function calls.
 	 */
 	public void sayHelloWorld();
 }

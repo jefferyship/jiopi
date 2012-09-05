@@ -10,7 +10,7 @@ Usage:
 ==============================================================================
 -->
 
-<project name="example.blueprint.helloworld" default="jar" basedir=".">
+<project name="example.blueprint.helloworld" default="build" basedir=".">
     <!-- set global properties for this build -->
 	<property name="commonlib.dir"        value="../../../CommonLibs"/>
     <property name="src.dir"        value="src"/> <!-- dir of source files -->
@@ -19,7 +19,7 @@ Usage:
     <property name="name"       value="example.blueprint.helloworld"/>
     <property name="type"        value="blueprint"/>
 	<property name="release.dir"        value="releases"/>
-    <property name="version"    value="0.1"/>
+    <property name="version"    value="1.0"/>
 
     <path id="project.lib">
         <fileset dir="${lib.dir}">

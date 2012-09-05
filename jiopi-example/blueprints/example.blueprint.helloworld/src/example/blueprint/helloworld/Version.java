@@ -28,13 +28,13 @@ import org.jiopi.framework.annotation.blueprint.Blueprint;
  * 
  * JIOPi HelloWorld Blueprint
  * 
- * @version 0.1 2012.8.12
- * @since 0.1
+ * @version 1.0 2012.9.2
+ * @since 1.0
  * @author netstarry
  *
  */
 @Target(ElementType.TYPE)
-@Blueprint(name="example.blueprint.helloworld", version="0.1", versionInterface=Version.class)
+@Blueprint(name="example.blueprint.helloworld", version="1.0", versionInterface=Version.class)
 public @interface Version {
 
 }
